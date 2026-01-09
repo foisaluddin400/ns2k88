@@ -16,7 +16,7 @@ export default function ClientLayout({ children }) {
     pathname === "/imprint" ||
     pathname === "/privacy" ||
     pathname === "/terms" ||
-    pathname === "/chat" ||
+ 
     pathname === "/favorite_trainer" ||
     pathname === "/book-proccess" ||
     pathname === "/codeConduct" ||

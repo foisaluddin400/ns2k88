@@ -3,25 +3,67 @@ import React from "react";
 import { Home, User, MessageSquare, CalendarDays } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import HomeIcon from "./HomeIcon";
+import ClientIcon from "./ClientIcon";
+import CalenderIcon from "./CalenderIcon";
+import ChatIcon from "./ChatIcon";
+import UserIcon from "./UserIcon";
 
 export const Navbar = () => {
   const pathname = usePathname();
 
-  const navItems = [
-    { label: "Home", path: "/", icon: <Home className="w-7 h-7" /> },
-    { label: "Coach", path: "/coach", icon: <User className="w-7 h-7" /> },
-    {
-      label: "Booking",
-      path: "/booking",
-      icon: <CalendarDays className="w-7 h-7" />,
-    },
-    {
-      label: "Chat",
-      path: "/chat",
-      icon: <MessageSquare className="w-7 h-7" />,
-    },
-    { label: "Profile", path: "/profile", icon: <User className="w-7 h-7" /> },
-  ];
+const navItems = [
+  {
+    label: "Home",
+    path: "/",
+    icon: (active) => (
+      <HomeIcon
+        color={active ? "white" : "#A3A9B0"}
+        className="w-7 h-7"
+      />
+    ),
+  },
+  {
+    label: "Coach",
+    path: "/coach",
+    icon: (active) => (
+      <ClientIcon
+        color={active ? "white" : "#A3A9B0"}
+        className="w-7 h-7"
+      />
+    ),
+  },
+  {
+    label: "Booking",
+    path: "/booking",
+    icon: (active) => (
+      <CalenderIcon
+               color={active ? "white" : "#A3A9B0"}
+        className="w-7 h-7"
+      />
+    ),
+  },
+  {
+    label: "Chat",
+    path: "/chat",
+    icon: (active) => (
+      <ChatIcon
+               color={active ? "white" : "#A3A9B0"}
+        className="w-7 h-7"
+      />
+    ),
+  },
+  {
+    label: "Profile",
+    path: "/profile",
+    icon: (active) => (
+      <UserIcon
+               color={active ? "white" : "#A3A9B0"}
+        className="w-7 h-7"
+      />
+    ),
+  },
+];
 
   const isPathActive = (item) => pathname === item.path;
 
@@ -35,15 +77,16 @@ export const Navbar = () => {
             href={item.path}
             className="flex flex-col items-center"
           >
-            <div
-              className={`flex justify-center items-center  ${
-                isPathActive(item)
-                  ? "bg-primary text-white w-[55px] h-[55px] rounded-full -mt-6"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {item.icon}
-            </div>
+          <div
+  className={`flex justify-center items-center ${
+    isPathActive(item)
+      ? "bg-primary w-[55px] h-[55px] rounded-full -mt-6"
+      : ""
+  }`}
+>
+  {item.icon(isPathActive(item))}
+</div>
+
             <p
               className={`text-sm mt-1 ${
                 isPathActive(item)
