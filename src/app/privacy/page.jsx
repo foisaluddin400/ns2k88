@@ -1,9 +1,11 @@
 'use client'
+import { Navigate } from '@/components/Navigate'
 import React from 'react'
 
 const Page = () => {
   return (
-    <div className="px-3">
+   <div className="px-3 -mt-20 -mb-20">
+      <Navigate></Navigate>
       <div className=" ">
 
         {/* Title */}

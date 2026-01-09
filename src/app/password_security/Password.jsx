@@ -1,4 +1,5 @@
 'use client'
+import { Navigate } from '@/components/Navigate';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md';
@@ -10,7 +11,8 @@ const Password = () => {
     { title: 'Delete Account', route: '/' },
   ];
   return (
-    <div className='px-3'>
+    <div className='px-3 -mt-20 -mb-20'>
+      <Navigate></Navigate>
         <div className="space-y-2 text-gray-500">
           {settingsSection.map((item, idx) => (
             <div

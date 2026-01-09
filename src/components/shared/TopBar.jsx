@@ -42,7 +42,7 @@ const TopBar = () => {
       </svg></Link>
 
       <div className="border  w-[40px] h-[40px] flex justify-center items-center rounded-full">
-       <Link href={'/push_notification'}> <svg
+       <Link href={'/notification'}> <svg
           width="24"
           height="24"
           viewBox="0 0 24 24"

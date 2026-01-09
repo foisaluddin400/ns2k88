@@ -45,5 +45,24 @@ li{
     max-width: 84vh;
     transition: all 0.3s;
     margin: auto;
-  
+}
+
+
+
+
+
+:where(.css-mncuj7).ant-drawer .ant-drawer-content {
+ position: absolute;
+    z-index: 1000;
+    max-width: 84vh;
+    transition: all 0.3s;
+    margin: auto;
+} 
+
+:where(.css-mncuj7).ant-drawer-bottom>.ant-drawer-content-wrapper {
+   position: absolute;
+    z-index: 1000;
+    max-width: 84vh;
+    transition: all 0.3s;
+    margin: auto;
 }

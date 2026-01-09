@@ -13,7 +13,14 @@ export default function ClientLayout({ children }) {
     pathname === "/signIn" ||
     pathname === "/auth" ||
     pathname === "/book" ||
-      pathname === "/book-proccess" ||
+    pathname === "/imprint" ||
+    pathname === "/privacy" ||
+    pathname === "/terms" ||
+    pathname === "/favorite_trainer" ||
+    pathname === "/book-proccess" ||
+    pathname === "/codeConduct" ||
+    pathname === "/notification" ||
+    pathname === "/push_notification" ||
     pathname === "/auth/continue" ||
     pathname === "/signUp" ||
     pathname === "/booked-done" ||
@@ -22,8 +29,12 @@ export default function ClientLayout({ children }) {
     pathname === "/coach/coachDetails" ||
     pathname === "/personal_information" ||
     pathname === "/signIn/forgot" ||
+    pathname === "/password_security" ||
     pathname === "/signIn/verify" ||
     pathname === "/signIn/newpass" ||
+    pathname === "/about" ||
+    pathname === "/password" ||
+    pathname === "/contact" ||
     pathname === "/signUp/done" ||
     pathname === "/signUp/seller" ||
     pathname === "/signUp/accountverify";
@@ -31,9 +42,20 @@ export default function ClientLayout({ children }) {
   const hideNavbarNav =
     pathname === "/signIn" ||
     pathname === "/book-proccess" ||
-     pathname === "/coach/coachDetails" ||
+    pathname === "/favorite_trainer" ||
+    pathname === "/coach/coachDetails" ||
     pathname === "/auth" ||
+    pathname === "/terms" ||
+    pathname === "/codeConduct" ||
+    pathname === "/password" ||
     pathname === "/book" ||
+    pathname === "/notification" ||
+    pathname === "/imprint" ||
+    pathname === "/privacy" ||
+    pathname === "/contact" ||
+    pathname === "/about" ||
+    pathname === "/password_security" ||
+    pathname === "/push_notification" ||
     pathname === "/booked-done" ||
     pathname === "/bookSession" ||
     pathname === "/booking-confirmed" ||

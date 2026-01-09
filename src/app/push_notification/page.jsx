@@ -1,5 +1,6 @@
 'use client';
 
+import { Navigate } from '@/components/Navigate';
 import React, { useState } from 'react';
 
 const Notification = () => {
@@ -18,7 +19,8 @@ const Notification = () => {
   };
 
   return (
-    <div className="px-3">
+    <div className="px-3 -mt-20 -mb-20">
+      <Navigate></Navigate>
       {/* Header */}
       <h1 className="text-2xl font-semibold mb-6">Notifications</h1>
 
@@ -31,26 +33,7 @@ const Notification = () => {
           onClick={() => toggle('push')}
         />
 
-        <NotificationItem
-          title="Email Notifications"
-          description="Get updates via email"
-          enabled={notifications.email}
-          onClick={() => toggle('email')}
-        />
-
-        <NotificationItem
-          title="SMS Notifications"
-          description="Receive SMS alerts"
-          enabled={notifications.sms}
-          onClick={() => toggle('sms')}
-        />
-
-        <NotificationItem
-          title="Trainer Updates"
-          description="Updates from your trainer"
-          enabled={notifications.trainerUpdates}
-          onClick={() => toggle('trainerUpdates')}
-        />
+    
       </div>
     </div>
   );

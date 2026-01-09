@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Eye, EyeOff, Lock } from "lucide-react"
+import { Navigate } from "@/components/Navigate"
 
 export default function Page() {
   const [showOld, setShowOld] = useState(false)
@@ -9,7 +10,8 @@ export default function Page() {
   const [showConfirm, setShowConfirm] = useState(false)
 
   return (
-    <div className="  px-3 ">
+    <div className="  px-3 -mt-20 -mb-20">
+      <Navigate></Navigate>
       {/* Old Password */}
       <div className="mb-6">
         <label className="block text-lg font-medium mb-2">

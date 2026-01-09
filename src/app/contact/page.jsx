@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Drawer, Input } from "antd";
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { SearchOutlined } from "@ant-design/icons";
+import { Navigate } from "@/components/Navigate";
 const trainers = [
   {
     id: 1,
@@ -59,7 +60,8 @@ const Page = () => {
   const handleTouchEnd = () => setStartY(null);
 
   return (
-    <div className="px-3">
+    <div className="px-3 -mt-20 -mb-20">
+         <Navigate></Navigate>
       <div className="">
         {/* Header */}
         <h1 className="text-2xl font-semibold text-center mb-6">

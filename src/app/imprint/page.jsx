@@ -1,19 +1,17 @@
-'use client'
-import React from 'react'
+"use client";
+import { Navigate } from "@/components/Navigate";
+import React from "react";
 
 const Imprint = () => {
   return (
-    <div className="px-3">
+    <div className="px-3 -mt-20 -mb-20">
+      <Navigate></Navigate>
       <div className="">
-        
-        {/* Page Title */}
         <h1 className="text-3xl font-bold text-gray-900 mb-8">
           Imprint (Impressum)
         </h1>
 
-        {/* Company Info */}
         <div className="space-y-6 text-gray-700">
-          
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">
               Company Name & Legal Form
@@ -78,11 +76,10 @@ const Imprint = () => {
             </h2>
             <p>VAT ID: DE123456789</p>
           </section>
-
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Imprint
+export default Imprint;
