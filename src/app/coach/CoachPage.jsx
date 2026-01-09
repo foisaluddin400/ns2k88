@@ -163,7 +163,7 @@ const CoachPage = () => {
           {coaches.map((coach) => (
             <Link href={"/coach/coachDetails"} key={coach.id}>
               <div className="bg-white mb-2 rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow cursor-pointer">
-                <div className="flex gap-5 items-center p-5">
+                <div className="flex gap-5 items-center p-3">
                   <div className="flex w-full items-center  gap-4">
                     <div className="relative flex-shrink-0">
                       <Image
