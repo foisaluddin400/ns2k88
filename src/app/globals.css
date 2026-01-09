@@ -23,3 +23,28 @@ body {
 li{
   list-style: none;
 }
+
+
+
+
+
+
+:where(.css-dev-only-do-not-override-xepvsj).ant-drawer .ant-drawer-content-wrapper {
+    position: absolute;
+    z-index: 1000;
+    max-width: 84vh;
+    transition: all 0.3s;
+    margin: auto;
+  
+}
+
+
+:where(.css-dev-only-do-not-override-xepvsj).ant-drawer .ant-drawer-body {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    padding: 24px;
+    overflow: auto;
+  
+    background-color: #F7F7F7;
+}
