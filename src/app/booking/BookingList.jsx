@@ -134,7 +134,8 @@ const BookingList = () => {
         {getSessions().map((session) => (
           <div key={session.id} className="bg-white rounded-2xl border p-3">
             <div className="flex gap-4">
-              <Image
+              <div>
+                <Image
                 src={session.image}
                 alt={session.name}
                 width={80}
@@ -142,6 +143,7 @@ const BookingList = () => {
                 className="rounded-full"
               />
 
+              </div>
               <div className="flex-1">
                 <div className="flex justify-between mb-1">
                   <h3 className="font-bold">
