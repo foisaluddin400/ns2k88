@@ -20,8 +20,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "JusBuy Website",
-  description: "E-commerce",
+  title: "My Dojo",
+  description: "My Dojo",
 };
 
 export default function RootLayout({ children }) {
