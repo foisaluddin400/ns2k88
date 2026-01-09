@@ -121,6 +121,7 @@ const CoachPage = () => {
     <>
       {/* Main Page Content */}
       <div className="px-3 bg-gray-50">
+        <h1 className="text-xl font-semibold mt-4 mb-2">Who are you looking for today?</h1>
         {/* Search + Filter */}
         <div className="flex sticky top-5 z-40 w-full items-center gap-4 pt-1 pb-4 bg-gray-50">
           <div className="w-full">

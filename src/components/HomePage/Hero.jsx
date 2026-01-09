@@ -60,7 +60,7 @@ const Hero = () => {
 
       <div className="flex items-center gap-3 bg-secondary p-5 rounded-md">
         <div>
-          <CalenderIcon  />
+          <CalenderIcon />
         </div>
         <div>
           <h1 className="text-xl font-semibold italic pb-2">
@@ -101,16 +101,18 @@ const Hero = () => {
             <div className="bg-white text-sm rounded-2xl shadow-sm border border-gray-100 overflow-hidden h-full">
               <div className="flex items-start p-2 gap-4">
                 {/* Profile Image */}
-               <Link href={'/coach/coachDetails'}> <div className="relative flex-shrink-0">
-                  <Image
-                    src={session.image}
-                    alt={session.name}
-                    width={80}
-                    height={80}
-                    className="rounded-full object-cover border-4 border-white shadow-md"
-                  />
-                </div>
-</Link>
+                <Link href={"/coach/coachDetails"}>
+                  {" "}
+                  <div className="relative flex-shrink-0">
+                    <Image
+                      src={session.image}
+                      alt={session.name}
+                      width={80}
+                      height={80}
+                      className="rounded-full object-cover border-4 border-white shadow-md"
+                    />
+                  </div>
+                </Link>
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-2">
@@ -147,6 +149,9 @@ const Hero = () => {
       </Splide>
 
       <div className="space-y-4 mt-7">
+           <h2 className="text-xl font-semibold text-neutral mb-2 mt-7 ">
+        Latest activities
+      </h2>
         <div className="flex items-center gap-3 bg-white p-5 rounded-md">
           <div className="bg-accent p-2 rounded-md">
             <IoIosCheckmarkCircleOutline className="w-6 h-6" />
@@ -178,7 +183,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  ); 
+  );
 };
 
 export default Hero;
