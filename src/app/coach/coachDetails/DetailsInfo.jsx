@@ -51,13 +51,13 @@ export default function DetailsInfo() {
               </span>
             </div>
             <div className="flex gap-2 mt-3">
-              <span className="px-3 py-1 border  text-gray-700 text-xs rounded-full font-medium">
+              <span className="px-3 py-1 border  text-[#7E8792] text-xs rounded-full font-medium">
                 Yoga
               </span>
-              <span className="px-3 py-1 border  text-gray-700 text-xs rounded-full font-medium">
+              <span className="px-3 py-1 border  text-[#7E8792] text-xs rounded-full font-medium">
                 Stretching
               </span>
-              <span className="px-3 py-1 border  text-gray-700 text-xs rounded-full font-medium">
+              <span className="px-3 py-1 border  text-[#7E8792] text-xs rounded-full font-medium">
                 Pilates
               </span>
               <span
@@ -313,59 +313,7 @@ export default function DetailsInfo() {
           </div>
         </div>
 
-        {/* Pricing Options */}
-        {/* <div className="mt-8">
-          <h2 className="text-lg font-bold mb-4 italic">Pricing options:</h2>
-
-          <div className="space-y-3">
-           
-            <div className="bg-white border border-gray-200 p-4 rounded-2xl flex items-center justify-between hover:border-gray-300 transition-colors">
-              <div>
-                <p className="font-bold text-gray-900">5-Session Pack</p>
-                <p className="text-xs text-gray-500 mt-1">
-                  BEST FOR REAL PROGRESS
-                </p>
-                <p className="text-xs text-gray-500">80€ PER SESSION</p>
-              </div>
-              <p className="text-2xl font-bold text-gray-900">400 €</p>
-            </div>
-
-       
-            <div className="bg-white border-2 border-gray-200 p-4 rounded-2xl flex items-center justify-between relative">
-              <div className="absolute -top-0 -right-0 bg-teal-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                Best Months & Most Chosen
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">10-Session Pack</p>
-                <p className="text-xs text-gray-500 mt-1">
-                  LOWEST PRICE PER SESSION
-                </p>
-                <p className="text-xs text-gray-500">
-                  RECOMMENDED BY MOST CUSTOMERS
-                </p>
-              </div>
-              <p className="text-2xl font-bold text-gray-900">750 €</p>
-            </div>
-
       
-            <div className="bg-white border border-gray-200 p-4 rounded-2xl flex items-center justify-between hover:border-gray-300 transition-colors">
-              <div>
-                <p className="font-bold text-gray-900">Single Session</p>
-                <p className="text-xs text-gray-500 mt-1">TRY AS YOU GO</p>
-              </div>
-              <p className="text-2xl font-bold text-gray-900">90 €</p>
-            </div>
-
-        
-            <div className="bg-white border border-gray-200 p-4 rounded-2xl flex items-center justify-between hover:border-gray-300 transition-colors">
-              <div>
-                <p className="font-bold text-gray-900">Trial Session</p>
-                <p className="text-xs text-gray-500 mt-1">1 X PER CUSTOMER</p>
-              </div>
-              <p className="text-2xl font-bold text-gray-900">0 €</p>
-            </div>
-          </div>
-        </div> */}
 
         {/* Book Now Button */}
         <Link href={"/book"}>

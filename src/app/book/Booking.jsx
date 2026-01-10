@@ -1,52 +1,51 @@
-'use client'
-import { Navigate } from '@/components/Navigate'
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useState } from 'react'
+"use client";
+import { Navigate } from "@/components/Navigate";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 
 const packages = [
   {
-    id: 'trial',
-    title: 'Trial Session',
-    price: '0 €',
-    subtitle: 'PAKET ZUM KENNENLERNEN UND ERSTE ZIELANALYSE.',
+    id: "trial",
+    title: "Trial Session",
+    price: "0 €",
+    subtitle: "PAKET ZUM KENNENLERNEN UND ERSTE ZIELANALYSE.",
     badge: null,
   },
   {
-    id: '10',
-    title: '10 Session Pack',
-    price: '750 €',
-    subtitle: 'FOR THE BEST RESULT\nRECOMMENDED BY MOST CUSTOMERS',
-    badge: 'BESTSELLER',
+    id: "10",
+    title: "10 Session Pack",
+    price: "750 €",
+    subtitle: "FOR THE BEST RESULT\nRECOMMENDED BY MOST CUSTOMERS",
+    badge: "BESTSELLER",
   },
   {
-    id: '5',
-    title: '05-Session Pack',
-    price: '400 €',
-    subtitle: 'BEST FOR REAL PROGRESS\n80€ PER SESSION',
+    id: "5",
+    title: "05-Session Pack",
+    price: "400 €",
+    subtitle: "BEST FOR REAL PROGRESS\n80€ PER SESSION",
     badge: null,
   },
   {
-    id: 'single',
-    title: 'Single Session',
-    price: '90 €',
-    subtitle: 'PAY AS YOU GO',
+    id: "single",
+    title: "Single Session",
+    price: "90 €",
+    subtitle: "PAY AS YOU GO",
     badge: null,
   },
-]
+];
 
 const Booking = () => {
-  const [selected, setSelected] = useState('trial')
+  const [selected, setSelected] = useState("trial");
 
   return (
     <div className="px-3 -mt-20 -mb-20">
-
-        <Navigate></Navigate>
+      <Navigate></Navigate>
       {/* Coach info */}
       <div className="flex bg-white  rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-4">
         <Image
-        width={300}
-        height={200}
+          width={300}
+          height={200}
           src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
           alt="Coach"
           className="w-20 h-20 rounded-2xl object-cover"
@@ -83,17 +82,15 @@ const Booking = () => {
             onClick={() => setSelected(pkg.id)}
             className={`relative border rounded-xl p-4 cursor-pointer transition ${
               selected === pkg.id
-                ? 'border-teal-600 bg-[#0A76760D]'
-                : 'border-gray-200 bg-white'
+                ? "border-teal-600 bg-[#0A76760D]"
+                : "border-gray-200 bg-white"
             }`}
           >
             {/* Radio */}
             <div className="absolute top-4 right-4">
               <div
                 className={`w-5 h-5 rounded-full border flex items-center justify-center ${
-                  selected === pkg.id
-                    ? 'border-teal-600'
-                    : 'border-gray-300'
+                  selected === pkg.id ? "border-teal-600" : "border-gray-300"
                 }`}
               >
                 {selected === pkg.id && (
@@ -110,9 +107,7 @@ const Booking = () => {
             )}
 
             <h3 className="font-semibold text-sm mb-1">{pkg.title}</h3>
-            <p className="text-teal-700 text-lg font-bold mb-2">
-              {pkg.price}
-            </p>
+            <p className="text-teal-700 text-lg font-bold mb-2">{pkg.price}</p>
             <p className="text-xs text-gray-500 whitespace-pre-line">
               {pkg.subtitle}
             </p>
@@ -121,11 +116,13 @@ const Booking = () => {
       </div>
 
       {/* CTA */}
-      <Link href={'/book-proccess'}><button className="w-full mt-6 bg-[#0A7676] hover:bg-teal-800 text-white py-3 rounded-xl font-semibold transition">
-        Continue to Checkout
-      </button></Link>
+      <Link href={"/book-proccess"}>
+        <button className="w-full mt-6 bg-[#0A7676] hover:bg-teal-800 text-white py-3 rounded-xl font-semibold transition">
+          Continue to Checkout
+        </button>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Booking
+export default Booking;

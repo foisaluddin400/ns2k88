@@ -20,49 +20,72 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-li{
+li {
   list-style: none;
 }
 
+/* Pagination container position */
+.splide__pagination {
+  bottom: 12px; /* image er niche distance */
+}
 
+/* Default dot */
+.splide__pagination__page {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
 
+/* Active dot (screenshot er moto boro line) */
+.splide__pagination__page.is-active {
+  width: 40px; /* 🔥 line er length */
+  height: 6px;
+  background: #ffffff; /* white */
+  border-radius: 9999px;
+  opacity: 10;
+  margin: 0 10px;
+}
 
-
+:where(.css-dev-only-do-not-override-mncuj7).ant-drawer .ant-drawer-body {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 0px;
+  overflow: auto;
+}
 
 :where(.css-dev-only-do-not-override-mncuj7).ant-drawer .ant-drawer-content {
-    position: absolute;
-    z-index: 1000;
-    max-width: 84vh;
-    transition: all 0.3s;
-    margin: auto;
-  
+  position: absolute;
+  z-index: 1000;
+  max-width: 84vh;
+  transition: all 0.3s;
+  margin: auto;
 }
 
-
-:where(.css-dev-only-do-not-override-mncuj7).ant-drawer-bottom>.ant-drawer-content-wrapper {
-    position: absolute;
-    z-index: 1000;
-    max-width: 84vh;
-    transition: all 0.3s;
-    margin: auto;
+:where(.css-dev-only-do-not-override-mncuj7).ant-drawer-bottom
+  > .ant-drawer-content-wrapper {
+  position: absolute;
+  z-index: 1000;
+  max-width: 84vh;
+  transition: all 0.3s;
+  margin: auto;
 }
-
-
-
-
 
 :where(.css-mncuj7).ant-drawer .ant-drawer-content {
- position: absolute;
-    z-index: 1000;
-    max-width: 84vh;
-    transition: all 0.3s;
-    margin: auto;
-} 
+  position: absolute;
+  z-index: 1000;
+  max-width: 84vh;
+  transition: all 0.3s;
+  margin: auto;
+}
 
-:where(.css-mncuj7).ant-drawer-bottom>.ant-drawer-content-wrapper {
-   position: absolute;
-    z-index: 1000;
-    max-width: 84vh;
-    transition: all 0.3s;
-    margin: auto;
+:where(.css-mncuj7).ant-drawer-bottom > .ant-drawer-content-wrapper {
+  position: absolute;
+  z-index: 1000;
+  max-width: 84vh;
+  transition: all 0.3s;
+  margin: auto;
 }

@@ -1,5 +1,10 @@
 "use client";
-import { CalenderIcon, MessageIcon } from "@/constant/svg.icon";
+import {
+  CalenderIcon,
+  LocationIcon,
+  MessageIcon,
+  SvgICon1,
+} from "@/constant/svg.icon";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css"; // default theme (clean & minimal)
 import { Calendar1Icon } from "lucide-react";
@@ -7,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GiConfirmed } from "react-icons/gi";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import Svg from "./Svg";
 
 const sessions = [
   {
@@ -53,24 +59,26 @@ const sessions = [
 ];
 const Hero = () => {
   return (
-    <div className="px-3 font-style">
+    <div className="px-3 mt-3 font-style">
       <div>
-        <h1 className="text-2xl font-bold italic mb-2">Hello, Alex!</h1>
+        <h1 className="text-2xl font-bold italic ">Hello, Alex!</h1>
       </div>
 
-      <div className="flex items-center gap-3 bg-secondary p-5 rounded-md">
+      <div className="flex items-center gap-3 bg-secondary p-3 mt-6 rounded-2xl">
         <div>
           <CalenderIcon />
         </div>
         <div>
-          <h1 className="text-xl font-semibold italic pb-2">
+          <h1 className="text-[14px] font-semibold italic pb-2">
             Book Your next session!
           </h1>
-          <p>This will increase the level of customer confidence</p>
+          <p className="text-[12px] text-[#161F37]">
+            This will increase the level of customer confidence
+          </p>
         </div>
       </div>
 
-      <h2 className="text-xl font-semibold text-neutral mb-2 mt-7 ">
+      <h2 className="text-xl italic font-semibold text-[#7E8792] mb-2 mt-7 ">
         Upcoming sessions
       </h2>
 
@@ -98,7 +106,7 @@ const Hero = () => {
       >
         {sessions.map((session) => (
           <SplideSlide key={session.id}>
-            <div className="bg-white text-sm rounded-2xl shadow-sm border border-gray-100 overflow-hidden h-full">
+            <div className="bg-white text-sm rounded-3xl shadow-sm border border-gray-100 overflow-hidden h-full">
               <div className="flex items-start p-2 gap-4">
                 {/* Profile Image */}
                 <Link href={"/coach/coachDetails"}>
@@ -109,15 +117,15 @@ const Hero = () => {
                       alt={session.name}
                       width={80}
                       height={80}
-                      className="rounded-full object-cover border-4 border-white shadow-md"
+                      className="rounded-2xl object-cover  shadow-md"
                     />
                   </div>
                 </Link>
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className=" font-bold text-gray-900 truncate">
-                      {session.name}, {session.age}
+                    <h3 className=" text-[14px] font-bold flex items-center gap-2 text-gray-900 truncate">
+                      {session.name}, {session.age} <Svg></Svg>
                     </h3>
                     <button className="bg-[#E2F8F8] hover:bg-teal-600 text-primary text-sm px-2 py-1 rounded-full transition whitespace-nowrap">
                       Confirm
@@ -125,16 +133,17 @@ const Hero = () => {
                   </div>
 
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p className="font-medium">
-                      {session.date} {session.time}
+                    <p className="font-medium flex items-center gap-2">
+                      <SvgICon1></SvgICon1> {session.date} {session.time}
                     </p>
                     <p className="flex items-center gap-2">
+                      <LocationIcon></LocationIcon>
                       {session.location}
                     </p>
                   </div>
 
                   <div className="flex gap-3 mt-5">
-                    <button className="flex-1 border border-gray-300 text-gray-700 py-1 rounded-xl font-medium hover:bg-gray-50 transition">
+                    <button className="flex-1  text-gray-700 bg-[#EFF0F1] py-1 rounded-xl font-medium hover:bg-gray-50 transition">
                       Cancel
                     </button>
                     <button className="flex-1 border border-black text-black py-1 rounded-xl font-medium  transition">
@@ -149,36 +158,36 @@ const Hero = () => {
       </Splide>
 
       <div className="space-y-4 mt-7">
-           <h2 className="text-xl font-semibold text-neutral mb-2 mt-7 ">
-        Latest activities
-      </h2>
-        <div className="flex items-center gap-3 bg-white p-5 rounded-md">
-          <div className="bg-accent p-2 rounded-md">
+        <h2 className="text-xl italic font-semibold text-[#7E8792]  mb-2 mt-7 ">
+          Latest activities
+        </h2>
+        <div className="flex items-center gap-3 bg-white border p-3 rounded-3xl">
+          <div className="bg-accent p-4 rounded-2xl">
             <IoIosCheckmarkCircleOutline className="w-6 h-6" />
           </div>
           <div>
             <h1 className="pb-2">Session with James K, completed</h1>
-            <p className="text-neutral text-sm">YESTERDAY, 6:30 AM</p>
+            <p className="text-[#A3A9B0] text-sm">YESTERDAY, 6:30 AM</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 bg-white p-5 rounded-md">
-          <div className="bg-accent p-2 rounded-md">
+        <div className="flex items-center gap-3 bg-white p-3 border rounded-3xl">
+          <div className="bg-accent p-5 rounded-2xl">
             <MessageIcon className="w-6 h-6" />
           </div>
           <div>
             <h1 className="pb-2">Session with James K, completed</h1>
-            <p className="text-neutral text-sm">YESTERDAY, 6:30 AM</p>
+            <p className="text-[#A3A9B0] text-sm">YESTERDAY, 6:30 AM</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 bg-white p-5 rounded-md">
-          <div className="bg-accent p-2 rounded-md">
+        <div className="flex items-center gap-3 bg-white p-3 border rounded-3xl">
+          <div className="bg-accent p-4 rounded-2xl">
             <IoIosCheckmarkCircleOutline className="w-6 h-6" />
           </div>
           <div>
             <h1 className="pb-2">Session with James K, completed</h1>
-            <p className="text-neutral text-sm">YESTERDAY, 6:30 AM</p>
+            <p className="text-[#A3A9B0] text-sm">YESTERDAY, 6:30 AM</p>
           </div>
         </div>
       </div>

@@ -16,62 +16,15 @@ export const UserIcon = ({
 
 export const FilterIcon = ({ width = "20", height = "20" }) => {
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 18 18"
-      fill="null"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M16.5 4.875H12"
-        stroke="#0F243E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M4.5 4.875H1.5"
-        stroke="#0F243E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M7.5 7.5C8.94975 7.5 10.125 6.32475 10.125 4.875C10.125 3.42525 8.94975 2.25 7.5 2.25C6.05025 2.25 4.875 3.42525 4.875 4.875C4.875 6.32475 6.05025 7.5 7.5 7.5Z"
-        stroke="#0F243E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M16.5 13.125H13.5"
-        stroke="#0F243E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M6 13.125H1.5"
-        stroke="#0F243E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M10.5 15.75C11.9497 15.75 13.125 14.5747 13.125 13.125C13.125 11.6753 11.9497 10.5 10.5 10.5C9.05025 10.5 7.875 11.6753 7.875 13.125C7.875 14.5747 9.05025 15.75 10.5 15.75Z"
-        stroke="#0F243E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
+ <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.5 4.875H12" stroke="#0F243E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.5 4.875H1.5" stroke="#0F243E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 7.5C8.94975 7.5 10.125 6.32475 10.125 4.875C10.125 3.42525 8.94975 2.25 7.5 2.25C6.05025 2.25 4.875 3.42525 4.875 4.875C4.875 6.32475 6.05025 7.5 7.5 7.5Z" stroke="#0F243E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.5 13.125H13.5" stroke="#0F243E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6 13.125H1.5" stroke="#0F243E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.5 15.75C11.9497 15.75 13.125 14.5747 13.125 13.125C13.125 11.6753 11.9497 10.5 10.5 10.5C9.05025 10.5 7.875 11.6753 7.875 13.125C7.875 14.5747 9.05025 15.75 10.5 15.75Z" stroke="#0F243E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
   );
 };
 
@@ -176,6 +129,39 @@ export const MarkIcon = ({
         fill="#FDBA45"
       />
     </svg>
+  );
+};
+
+
+export const SvgICon1 = ({
+  width = "20",
+  height = "20",
+  strock,
+  color = "black    ",
+}) => {
+  return (
+   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.33337 1.33398V3.33398" stroke="#A3A9B0" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.6666 1.33398V3.33398" stroke="#A3A9B0" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.6667 2.33398C12.8867 2.45398 14 3.30065 14 6.43398V10.554C14 13.3007 13.3333 14.674 10 14.674H6C2.66667 14.674 2 13.3007 2 10.554V6.43398C2 3.30065 3.11333 2.46065 5.33333 2.33398H10.6667Z" stroke="#A3A9B0" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.8333 11.7324H2.16663" stroke="#A3A9B0" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+  );
+};
+
+export const LocationIcon = ({
+  width = "20",
+  height = "20",
+  strock,
+  color = "black    ",
+}) => {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.00004 8.95297C9.1488 8.95297 10.08 8.02172 10.08 6.87297C10.08 5.72422 9.1488 4.79297 8.00004 4.79297C6.85129 4.79297 5.92004 5.72422 5.92004 6.87297C5.92004 8.02172 6.85129 8.95297 8.00004 8.95297Z" stroke="#A3A9B0" stroke-width="1.5"/>
+<path d="M2.4133 5.66065C3.72664 -0.112681 12.28 -0.106014 13.5866 5.66732C14.3533 9.05399 12.2466 11.9207 10.4 13.694C9.05997 14.9873 6.93997 14.9873 5.5933 13.694C3.7533 11.9207 1.64664 9.04732 2.4133 5.66065Z" stroke="#A3A9B0" stroke-width="1.5"/>
+</svg>
+
   );
 };
 

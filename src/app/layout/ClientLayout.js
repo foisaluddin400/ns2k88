@@ -71,10 +71,10 @@ export default function ClientLayout({ children }) {
 
   return (
     <>
-      <div className="flex flex-col bg-slate-50 min-h-screen max-w-3xl m-auto">
-        <div className="fixed z-10 px-3 bg-white top-0 w-[48rem]">
+      <div className="flex flex-col bg-[#F7F7F7] min-h-screen max-w-3xl m-auto">
+        <div className="fixed z-10 px-3 bg-[#F7F7F7] top-0 w-[48rem]">
           {!hideNavbarNav && (
-            <div className="py-4 ">
+            <div className="py-4 pt-8 ">
               <TopBar></TopBar>
             </div>
           )}

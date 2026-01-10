@@ -4,10 +4,12 @@ import Image from "next/image";
 import { Search, Users, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
-import { FilterIcon } from "@/constant/svg.icon";
+import { FilterIcon, LocationIcon } from "@/constant/svg.icon";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Link from "next/link";
 import { Drawer } from "antd";
+import Svg from "@/components/HomePage/Svg";
+import Array from "./Array";
 
 const coaches = [
   {
@@ -15,7 +17,7 @@ const coaches = [
     name: "Ann Smith",
     age: 26,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or "Peak Fitness..."',
+    location: 'B. Berlin ',
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -26,7 +28,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or "Peak Fitness..."',
+    location: 'B. Berlin or ',
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -37,7 +39,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or "Peak Fitness..."',
+    location: 'B. Berlin ',
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -48,7 +50,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or "Peak Fitness..."',
+    location: 'B. Berlin ',
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -59,7 +61,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or "Peak Fitness..."',
+    location: 'B. Berlin',
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -70,7 +72,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or "Peak Fitness..."',
+    location: 'B. Berlin ',
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -121,7 +123,7 @@ const CoachPage = () => {
     <>
       {/* Main Page Content */}
       <div className="px-3 bg-gray-50">
-        <h1 className="text-xl font-semibold mt-4 mb-2">Who are you looking for today?</h1>
+        <h1 className="text-xl font-semibold mt-4 mb-2 italic">Who are you looking for today?</h1>
         {/* Search + Filter */}
         <div className="flex sticky top-5 z-40 w-full items-center gap-4 pt-1 pb-4 bg-gray-50">
           <div className="w-full">
@@ -130,11 +132,11 @@ const CoachPage = () => {
               <input
                 type="text"
                 placeholder="Looking for a trainer..."
-                className="w-full pl-12 pr-12 py-4 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-12 pr-12 py-2 bg-transparent rounded-full  border border-gray-200 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
-          <button onClick={() => setIsFilterOpen(true)}>
+          <button className="bg-gray-100 w-[45px] h-[45px] rounded-full flex justify-center items-center" onClick={() => setIsFilterOpen(true)}>
             <FilterIcon />
           </button>
         </div>
@@ -162,7 +164,7 @@ const CoachPage = () => {
         <div className="space-y-4 ">
           {coaches.map((coach) => (
             <Link href={"/coach/coachDetails"} key={coach.id}>
-              <div className="bg-white mb-2 rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow cursor-pointer">
+              <div className="bg-white mb-2 rounded-3xl  border  hover:shadow-md transition-shadow cursor-pointer">
                 <div className="flex gap-5 items-center p-3">
                   <div className="flex w-full items-center  gap-4">
                     <div className="relative flex-shrink-0">
@@ -171,30 +173,30 @@ const CoachPage = () => {
                         alt={coach.name}
                         width={80}
                         height={80}
-                        className="rounded-3xl object-cover border-4 border-white shadow-lg"
+                        className="rounded-3xl object-cover "
                       />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between mb-1">
                         <div>
-                          <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                          <h3 className="text-[14px] font-bold text-gray-900 flex items-center gap-2">
                             {coach.name}
                             <div className="flex items-center gap-1 font-semibold">
                               <span>{coach.rating}</span>
-                              <FaStar className="text-yellow-500" />
+                              <Svg></Svg>
                             </div>
                           </h3>
-                          <div className="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                          <div className="flex items-center gap-2 text-sm text-gray-600  mt-1">
                             {coach.specialties.map((s, i) => (
-                              <span key={i}>
+                              <span className="bg-[#F7F7F7] text-[10.8px] rounded-full px-2" key={i}>
                                 {s}
                                 {i < coach.specialties.length - 1 && (
-                                  <span className="mx-1 text-gray-400">•</span>
+                                  <span className="mx-1  text-gray-400">•</span>
                                 )}
                               </span>
                             ))}
                             {coach.specialties.length > 1 && (
-                              <span className="text-indigo-600 font-medium">
+                              <span className=" font-medium">
                                 +{coach.specialties.length - 1} more
                               </span>
                             )}
@@ -202,15 +204,15 @@ const CoachPage = () => {
                         </div>
                       </div>
                       <div className="flex items-center justify-between mt-3 text-sm">
-                        <div className="text-gray-500">
-                          <span className="text-gray-400">Location</span>{" "}
+                        <div className="text-gray-500 flex text-[12px] items-center gap-2">
+                          <span className="text-gray-400"><LocationIcon></LocationIcon></span>{" "}
                           {coach.location}
                         </div>
                         <div className="flex items-center gap-3"></div>
                       </div>
                     </div>
                   </div>
-                  <RiArrowRightSLine />
+                  <Array></Array>
                 </div>
               </div>
             </Link>
