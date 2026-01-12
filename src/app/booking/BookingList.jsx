@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Drawer, Rate, Input, Calendar } from "antd";
 import ResheduleDrawar from "./ResheduleDrawar";
+import { LocationIcon, MarkIcon, SvgICon1 } from "@/constant/svg.icon";
 
 const { TextArea } = Input;
 
@@ -38,7 +39,7 @@ const BookingList = () => {
       date: "10-09-2025",
       Status: "Complete",
       time: "6:00 pm",
-      location: "e.g. Berlin or Peak Fitness",
+      location: "e.g. Berlin ",
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
     },
@@ -136,37 +137,36 @@ const BookingList = () => {
             <div className="flex gap-4">
               <div>
                 <Image
-                src={session.image}
-                alt={session.name}
-                width={80}
-                height={80}
-                className="rounded-full"
-              />
-
+                  src={session.image}
+                  alt={session.name}
+                  width={80}
+                  height={80}
+                  className="rounded-2xl"
+                />
               </div>
               <div className="flex-1">
                 <div className="flex justify-between mb-1">
-                  <h3 className="font-bold">
-                    {session.name}, {session.age}
+                  <h3 className="font-bold flex items-center gap-1 text-[14px]">
+                    {session.name}, {session.age} <MarkIcon></MarkIcon>
                   </h3>
                   <span className="bg-[#E2F8F8] text-primary px-2 py-1 rounded-full text-xs">
                     {session.Status}
                   </span>
                 </div>
 
-                <p className="font-medium">
-                  {session.date} {session.time}
+                <p className="font-medium text-[12px] flex gap-1 items-center">
+                  <SvgICon1></SvgICon1>{session.date} {session.time}
                 </p>
-                <p className="text-gray-600">{session.location}</p>
+                <p className="text-gray-600 text-[12px] flex gap-1 items-center"><LocationIcon></LocationIcon>{session.location}</p>
 
                 <div className="mt-4 flex gap-3">
                   {activeTab === "Upcoming" && (
                     <>
-                      <button className="flex-1 border border-gray-300 py-1 rounded-xl hover:bg-gray-50">
+                      <button className="flex-1 bg-gray-200 py-1 rounded-full hover:bg-gray-50">
                         Cancel
                       </button>
                       <button
-                        className="flex-1 border border-black py-1 rounded-xl"
+                        className="flex-1 border border-black py-1 rounded-full"
                         onClick={() => openRescheduleConfirm(session)}
                       >
                         Reschedule
@@ -209,33 +209,52 @@ const BookingList = () => {
       >
         {selectedSession && (
           <div
+          className="p-4"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
             <div
-              className="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4 cursor-pointer"
+              className="w-12  h-1.5 bg-gray-300 rounded-full mx-auto mb-4 cursor-pointer"
               onClick={closeReviewModal}
             />
 
-            <div className="flex items-center gap-3 mb-4">
+            <h1 className="text-[20px] font-bold italic">Leave a review</h1>
+            <p className="text-[14px] text-[#0F243E]">Rate your session with Ann Smith.</p>
+
+            <div className="flex bg-white p-2 rounded-2xl mt-4 items-center gap-3 mb-4">
               <Image
                 src={selectedSession.image}
                 alt={selectedSession.name}
                 width={60}
                 height={60}
-                className="rounded-full"
+                className="rounded-2xl"
               />
               <div>
-                <h3 className="font-semibold">{selectedSession.name}</h3>
-                <p className="text-xs text-gray-500">
-                  {selectedSession.date} • {selectedSession.time}
-                </p>
+                <h3 className="font-bold text-[14px]">{selectedSession.name}</h3>
+               
+                <div className="flex gap-2 mt-3">
+              <span className="px-3 py-1  bg-gray-100 text-[#7E8792] text-xs rounded-full font-medium">
+                Yoga
+              </span>
+              <span className="px-3 py-1 bg-gray-100  text-[#7E8792] text-xs rounded-full font-medium">
+                Stretching
+              </span>
+              <span className="px-3 py-1 bg-gray-100  text-[#7E8792] text-xs rounded-full font-medium">
+                Pilates
+              </span>
+              <span
+              
+                className="px-3 cursor-pointer py-1 bg-gray-100 text-xs rounded-full "
+              >
+                +7 More
+              </span>
+            </div>
               </div>
             </div>
 
             <div className="mb-4">
-              <p className="font-medium mb-2">Rate your session</p>
+         
               <Rate value={rating} onChange={setRating} />
             </div>
 
@@ -261,13 +280,13 @@ const BookingList = () => {
       {/* 🔹 Reschedule Confirm Drawer */}
       <Drawer
         placement="bottom"
-        height="30%"
+        height="35%"
         open={rescheduleConfirmOpen}
         onClose={closeRescheduleConfirm}
         closable={false}
         className="app-drawer"
       >
-        <div className="text-center">
+        <div className="text-center p-4">
           <div className="flex justify-center">
             <svg
               width="72"
@@ -282,11 +301,12 @@ const BookingList = () => {
               />
             </svg>
           </div>
-<h1 className="text-2xl font-bold mb-3">Hey!</h1>
+          <h1 className="text-2xl font-bold mb-3">Hey!</h1>
           <p className="text-sm  mb-4">
-            Are you sure you want to cancel/reschedule? Do you still want to proceed?
+            Are you sure you want to cancel/reschedule? Do you still want to
+            proceed?
           </p>
-        
+
           <button
             onClick={proceedReschedule}
             className="bg-[#0A7676] w-full text-white py-3 px-6 rounded-xl font-semibold"

@@ -16,7 +16,9 @@ export default function ClientLayout({ children }) {
     pathname === "/imprint" ||
     pathname === "/privacy" ||
     pathname === "/terms" ||
+   pathname.startsWith("/chat")||
     pathname === "/favorite_trainer" ||
+   
     pathname === "/book-proccess" ||
     pathname === "/codeConduct" ||
     pathname === "/notification" ||
@@ -46,6 +48,8 @@ export default function ClientLayout({ children }) {
     pathname === "/coach/coachDetails" ||
     pathname === "/auth" ||
     pathname === "/terms" ||
+    pathname.startsWith("/chat")||
+    pathname === "/chat" ||
     pathname === "/codeConduct" ||
     pathname === "/password" ||
     pathname === "/book" ||

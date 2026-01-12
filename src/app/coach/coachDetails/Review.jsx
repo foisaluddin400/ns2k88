@@ -49,9 +49,9 @@ const reviews = [
 const Review = () => {
   return (
     <div className="">
-      <h2 className="text-lg font-semibold mb-3">Reviews (23)</h2>
+      {/* <h2 className="text-lg font-semibold mb-3">Reviews (23)</h2> */}
 
-      <Splide
+      {/* <Splide
         options={{
           type: "slide",
           perPage: 2,
@@ -71,7 +71,7 @@ const Review = () => {
         {reviews.map((review) => (
           <SplideSlide key={review.id}>
             <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-200 h-full">
-              {/* Top Section */}
+          
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
                   <Image
@@ -94,21 +94,21 @@ const Review = () => {
                 </div>
               </div>
 
-              {/* Review Text */}
+            
               <p className="text-sm text-gray-700 mt-3 leading-5">
                 {review.text}
               </p>
             </div>
           </SplideSlide>
         ))}
-      </Splide>
+      </Splide> */}
 
       {/* Bottom Link */}
-      <div className="text-center mt-4">
+      {/* <div className="text-center mt-4">
         <Link href={'/viewAllReview'}><button className="text-primary font-medium">View all reviews</button></Link>
-      </div>
+      </div> */}
 
-      <div className="mt-8">
+      <div className="">
         <div className="space-y-3">
           {/* Location */}
           <div className="bg-white shadow-sm border p-4 rounded-2xl flex items-start justify-between">
@@ -135,7 +135,7 @@ const Review = () => {
               </svg>
 
               <div>
-                <p className="text-xs text-gray-500 font-semibold uppercase">
+                <p className="text-xs text-gray-900 uppercase">
                   Instagram
                 </p>
               </div>
@@ -190,7 +190,7 @@ const Review = () => {
               </svg>
 
               <div>
-                <p className="text-xs text-gray-500 font-semibold uppercase">
+                <p className="text-xs text-gray-900  uppercase">
                   Portfolio
                 </p>
               </div>
@@ -224,7 +224,7 @@ const Review = () => {
               </svg>
 
               <div>
-                <p className="text-xs text-gray-500 font-semibold uppercase">
+                <p className="text-xs text-gray-900  uppercase">
                   Chat Now
                 </p>
               </div>

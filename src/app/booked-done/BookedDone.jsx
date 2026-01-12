@@ -8,7 +8,7 @@ import { FaStar } from "react-icons/fa6";
 const BookedDone = () => {
   return (
     <div className="px-3 -mt-20 -mb-20">
-        <Navigate></Navigate>
+      <Navigate></Navigate>
       <div className="text-center mb-5">
         <div>
           <div className="flex justify-center">
@@ -25,18 +25,18 @@ const BookedDone = () => {
               />
             </svg>
           </div>
-          <h1 className="text-lg font-bold italic">Booking Confirmed</h1>
-          <p className="text-gray-400">
+          <h1 className="text-[20px] font-bold italic">Booking Confirmed</h1>
+          <p className="text-gray-400 text-[14px]">
             {" "}
             Your session with Ann Smith is scheduled
           </p>
         </div>
       </div>
-       <div className="flex bg-white  rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-4">
-     <Image
-                     width={300}
-                     height={200}
-               src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+      <div className="flex bg-white  rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-3">
+        <img
+          width={300}
+          height={200}
+          src="https://i.pravatar.cc/150?img=33"
           alt="Coach"
           className="w-20 h-20 rounded-2xl object-cover"
         />
@@ -44,11 +44,11 @@ const BookedDone = () => {
           <h3 className="font-semibold text-sm flex items-center gap-1">
             Ann Smith <span className="text-green-500"></span>
           </h3>
-          <div className="flex gap-2 mt-1">
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+         <div className="flex gap-2 mt-1">
+            <span className="text-xs text-[#A3A9B0] bg-gray-100 px-2 py-0.5 rounded-full">
               Yoga
             </span>
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-xs text-[#A3A9B0] bg-gray-100 px-2 py-0.5 rounded-full">
               Stretching
             </span>
             <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
@@ -65,7 +65,7 @@ const BookedDone = () => {
               <MapPin className="w-5  h-5 text-gray-400 flex-shrink-0 mt-0.5" />
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 Location
               </p>
               <p className="text-gray-900 font-medium">
@@ -95,7 +95,7 @@ const BookedDone = () => {
               </svg>
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 TRAINING TIME
               </p>
               <p className="text-gray-900 font-medium">60 Minutes</p>
@@ -139,7 +139,7 @@ const BookedDone = () => {
               </svg>
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 PRICING OPTIONS
               </p>
               <p className="text-gray-900 font-medium">5x session</p>
@@ -217,7 +217,7 @@ const BookedDone = () => {
               </svg>
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 Certificate
               </p>
               <p className="text-gray-900 font-medium">3</p>
@@ -226,9 +226,11 @@ const BookedDone = () => {
         </div>
       </div>
 
-      <Link href={'/booking'}><button className="w-full mt-6 bg-[#0A7676] hover:bg-teal-800 text-white py-3 rounded-xl font-semibold transition">
-        See my bookings
-      </button></Link>
+      <Link href={"/booking"}>
+        <button className="w-full mt-6 bg-[#0A7676] hover:bg-teal-800 text-white py-3 rounded-xl font-semibold transition">
+          See my bookings
+        </button>
+      </Link>
     </div>
   );
 };

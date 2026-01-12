@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa6";
 import { RiArrowRightSLine } from "react-icons/ri";
+import Array from "../coach/Array";
 
 const Favorite = () => {
   const coaches = [
@@ -13,7 +14,7 @@ const Favorite = () => {
       name: "Ann Smith",
       age: 26,
       specialties: ["Yoga", "Stretching"],
-      location: 'B. Berlin or "Peak Fitness..."',
+      location: 'B. Berlin ',
       price: "€32.00 /hr",
       rating: 4.9,
       image:
@@ -83,8 +84,8 @@ const Favorite = () => {
       <div className="space-y-4 ">
         {coaches.map((coach) => (
           <Link href={"/coach/coachDetails"} key={coach.id}>
-            <div className="bg-white mb-2 rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow cursor-pointer">
-              <div className="flex gap-5 items-center p-5">
+            <div className="bg-white mb-2 rounded-3xl border   hover:shadow-md transition-shadow cursor-pointer">
+              <div className="flex gap-5 items-center p-3">
                 <div className="flex w-full items-center  gap-4">
                   <div className="relative flex-shrink-0">
                     <Image
@@ -98,24 +99,22 @@ const Favorite = () => {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between mb-1">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <h3 className="text-[14px] font-bold text-gray-900 flex items-center gap-2">
                           {coach.name}
                           <div className="flex items-center gap-1 font-semibold">
                             <span>{coach.rating}</span>
                             <FaStar className="text-yellow-500" />
                           </div>
                         </h3>
-                        <div className="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                        <div className="flex items-center gap-2 text-[12px] text-gray-600 mt-1 ">
                           {coach.specialties.map((s, i) => (
-                            <span key={i}>
+                            <span className="bg-[#F7F7F7] px-2 rounded-full" key={i}>
                               {s}
-                              {i < coach.specialties.length - 1 && (
-                                <span className="mx-1 text-gray-400">•</span>
-                              )}
+                             
                             </span>
                           ))}
                           {coach.specialties.length > 1 && (
-                            <span className="text-indigo-600 font-medium">
+                            <span className="bg-[#F7F7F7] text-black rounded-full px-2 font-medium">
                               +{coach.specialties.length - 1} more
                             </span>
                           )}
@@ -131,7 +130,7 @@ const Favorite = () => {
                     </div>
                   </div>
                 </div>
-                <RiArrowRightSLine />
+                <Array></Array>
               </div>
             </div>
           </Link>

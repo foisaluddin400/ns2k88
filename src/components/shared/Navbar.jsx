@@ -67,7 +67,7 @@ export const Navbar = () => {
             <div
               className={`flex justify-center items-center ${
                 isPathActive(item)
-                  ? "bg-primary w-[55px] h-[55px] rounded-full -mt-6"
+                  ? "bg-gradient-to-t from-[#0A7676] to-[#17A4A4] w-[55px] h-[55px] rounded-full -mt-6"
                   : ""
               }`}
             >

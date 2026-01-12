@@ -1,5 +1,6 @@
 "use client";
 import { Navigate } from "@/components/Navigate";
+import { MarkIcon } from "@/constant/svg.icon";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -42,7 +43,7 @@ const Booking = () => {
     <div className="px-3 -mt-20 -mb-20">
       <Navigate></Navigate>
       {/* Coach info */}
-      <div className="flex bg-white  rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-4">
+      <div className="flex bg-white  rounded-3xl border border  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-3">
         <Image
           width={300}
           height={200}
@@ -51,14 +52,17 @@ const Booking = () => {
           className="w-20 h-20 rounded-2xl object-cover"
         />
         <div>
-          <h3 className="font-semibold text-sm flex items-center gap-1">
+          <h3 className="font-semibold text-lg flex items-center gap-1">
             Ann Smith <span className="text-green-500"></span>
+            <span className="">
+                            <MarkIcon ></MarkIcon>
+                          </span>
           </h3>
           <div className="flex gap-2 mt-1">
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-xs text-[#7E8792] bg-gray-100 px-2 py-0.5 rounded-full">
               Yoga
             </span>
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-xs text-[#7E8792] bg-gray-100 px-2 py-0.5 rounded-full">
               Stretching
             </span>
             <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
@@ -69,7 +73,7 @@ const Booking = () => {
       </div>
 
       {/* Pricing */}
-      <h2 className="text-xl font-semibold mb-1">Pricing & Packages</h2>
+      <h2 className="text-xl font-semibold mb-1 italic">Pricing & Packages</h2>
       <p className="text-sm text-gray-500 mb-4">
         Choose your Package for your goals.
       </p>
@@ -80,7 +84,7 @@ const Booking = () => {
           <div
             key={pkg.id}
             onClick={() => setSelected(pkg.id)}
-            className={`relative border rounded-xl p-4 cursor-pointer transition ${
+            className={`relative border rounded-2xl p-4 cursor-pointer transition ${
               selected === pkg.id
                 ? "border-teal-600 bg-[#0A76760D]"
                 : "border-gray-200 bg-white"
@@ -108,7 +112,7 @@ const Booking = () => {
 
             <h3 className="font-semibold text-sm mb-1">{pkg.title}</h3>
             <p className="text-teal-700 text-lg font-bold mb-2">{pkg.price}</p>
-            <p className="text-xs text-gray-500 whitespace-pre-line">
+            <p className="text-xs text-[#A3A9B0] whitespace-pre-line">
               {pkg.subtitle}
             </p>
           </div>
@@ -117,7 +121,7 @@ const Booking = () => {
 
       {/* CTA */}
       <Link href={"/book-proccess"}>
-        <button className="w-full mt-6 bg-[#0A7676] hover:bg-teal-800 text-white py-3 rounded-xl font-semibold transition">
+        <button className="w-full mt-6 bg-[#0A7676] hover:bg-teal-800 text-white py-3 rounded-2xl italic font-semibold transition">
           Continue to Checkout
         </button>
       </Link>

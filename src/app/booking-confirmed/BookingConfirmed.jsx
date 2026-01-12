@@ -25,30 +25,30 @@ const BookingConfirmed = () => {
               />
             </svg>
           </div>
-          <h1 className="text-lg font-bold italic">Booking Confirmed</h1>
-          <p className="text-gray-400">
+          <h1 className="text-[20px] font-bold italic">Booking Confirmed</h1>
+          <p className="text-gray-400 text-[14px]">
             {" "}
             Your session with Ann Smith is scheduled
           </p>
         </div>
       </div>
-       <div className="flex bg-white  rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-4">
-       <Image
+       <div className="flex bg-white  rounded-3xl border   hover:shadow-md transition-shadow items-center gap-3 mb-6 p-3">
+       <img
                        width={300}
                        height={200}
-                 src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+                 src="https://i.pravatar.cc/150?img=33"
           alt="Coach"
-          className="w-20 h-20 rounded-2xl object-cover"
+          className="w-16 h-16 rounded-2xl object-cover"
         />
         <div>
           <h3 className="font-semibold text-sm flex items-center gap-1">
             Ann Smith <span className="text-green-500"></span>
           </h3>
           <div className="flex gap-2 mt-1">
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-xs text-[#A3A9B0] bg-gray-100 px-2 py-0.5 rounded-full">
               Yoga
             </span>
-            <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+            <span className="text-xs text-[#A3A9B0] bg-gray-100 px-2 py-0.5 rounded-full">
               Stretching
             </span>
             <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
@@ -57,15 +57,15 @@ const BookingConfirmed = () => {
           </div>
         </div>
       </div>
-      <div className="space-y-3 bg-white border rounded-2xl p-2 shadow-sm">
+      <div className="space-y-3 bg-white border rounded-2xl p-2 ">
         {/* Location */}
         <div className="  border-b p-2 pb-4  flex items-start justify-between">
-          <div className="flex gap-3">
-            <div className="bg-gray-100 w-[40px] h-[40px] flex justify-center items-center rounded-md">
+          <div className="flex gap-3 items-center">
+            <div className="bg-gray-100 w-[50px] h-[50px] flex justify-center items-center rounded-md">
               <MapPin className="w-5  h-5 text-gray-400 flex-shrink-0 mt-0.5" />
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 Location
               </p>
               <p className="text-gray-900 font-medium">
@@ -76,8 +76,8 @@ const BookingConfirmed = () => {
         </div>
 
         <div className="border-b p-2 pb-4  flex items-start justify-between">
-          <div className="flex gap-3">
-            <div className="bg-gray-100 w-[40px] h-[40px] flex justify-center items-center rounded-md">
+          <div className="flex gap-3 items-center">
+            <div className="bg-gray-100 w-[50px] h-[50px] flex justify-center items-center rounded-md">
               <svg
                 width="18"
                 height="18"
@@ -95,7 +95,7 @@ const BookingConfirmed = () => {
               </svg>
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 TRAINING TIME
               </p>
               <p className="text-gray-900 font-medium">60 Minutes</p>
@@ -105,8 +105,8 @@ const BookingConfirmed = () => {
 
         {/* Experience */}
         <div className="border-b p-2 pb-4  flex items-start justify-between">
-          <div className="flex gap-3">
-            <div className="bg-gray-100 w-[40px] h-[40px] flex justify-center items-center rounded-md">
+          <div className="flex gap-3 items-center">
+            <div className="bg-gray-100 w-[50px] h-[50px] flex justify-center items-center rounded-md">
               <svg
                 width="18"
                 height="18"
@@ -139,7 +139,7 @@ const BookingConfirmed = () => {
               </svg>
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 PRICING OPTIONS
               </p>
               <p className="text-gray-900 font-medium">5x session</p>
@@ -149,8 +149,8 @@ const BookingConfirmed = () => {
 
         {/* Certificate */}
         <div className=" p-2 pb-4  flex items-start justify-between">
-          <div className="flex gap-3">
-            <div className="bg-gray-100 w-[40px] h-[40px] flex justify-center items-center rounded-md">
+          <div className="flex gap-3 items-center">
+            <div className="bg-gray-100 w-[50px] h-[50px] flex justify-center items-center rounded-md">
               <svg
                 width="18"
                 height="18"
@@ -217,7 +217,7 @@ const BookingConfirmed = () => {
               </svg>
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-semibold uppercase">
+              <p className="text-xs text-[#A3A9B0] uppercase">
                 Certificate
               </p>
               <p className="text-gray-900 font-medium">3</p>

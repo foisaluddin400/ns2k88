@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import Image from "next/image";
-import { ChatIcon } from "@/constant/svg.icon";
+import { ChatIcon, MarkIcon, RemainningIcon } from "@/constant/svg.icon";
 import BookingList from "./BookingList";
 import { Drawer, Modal } from "antd";
 import BookingNextSession from "./BookingNextSession";
@@ -84,8 +84,8 @@ const Page = () => {
 
   return (
     <div className="px-3">
-      <h2 className="text-xl font-semibold text-black italic mb-3 mt-7">
-        My Booking
+      <h2 className="text-[14px] font-semibold text-black italic mb-3 mt-7">
+        My Bookings
       </h2>
 
       {/* Sessions Slider */}
@@ -104,27 +104,34 @@ const Page = () => {
       >
         {sessions.map((item) => (
           <SplideSlide key={item.id}>
-            <div className="bg-white rounded-2xl border border-gray-200 p-4 flex items-center gap-4 shadow-sm">
+            <div className="bg-white rounded-2xl border border-gray-200 p-3 flex items-center gap-4 shadow-sm">
               <Image
                 src={item.image}
-                width={70}
-                height={70}
+                width={60}
+                height={60}
                 alt={item.name}
                 className="rounded-xl object-cover"
               />
               <div className="flex-1">
                 <div className="flex items-center gap-1">
-                  <h3 className="font-bold text-gray-900 text-[18px]">
+                  <h3 className="font-bold text-gray-900 text-[14px]">
                     {item.name}
                   </h3>
-                  <span className="text-yellow-500 text-[18px]">✔</span>
+                  <span>
+                    <MarkIcon></MarkIcon>
+                  </span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">
-                  ⏳ REMAINING SESSION{" "}
-                  <span className="text-[#1CA7A6] font-semibold">
-                    {item.remaining}
+                <p className="text-[10px] flex text-gray-600 mt-1">
+                  <span className="mr-1">
+                    <RemainningIcon></RemainningIcon>
                   </span>{" "}
-                  of {item.total}
+                  REMAINING SESSION{" "}
+                  <h1 className="flex ">
+                    <span className="text-primary font-semibold">
+                      {item.remaining}
+                    </span>
+                    of {item.total}
+                  </h1>
                 </p>
                 <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
                   <div
@@ -137,7 +144,7 @@ const Page = () => {
                 </div>
               </div>
 
-              <button className="w-12 h-12 bg-[#A2A4A9] rounded-full flex items-center justify-center">
+              <button className="w-10 h-10 bg-[#A2A4A9] rounded-full flex items-center justify-center">
                 <ChatIcon />
               </button>
             </div>
@@ -193,7 +200,8 @@ const Page = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold">{trainer.name}</h3>
                   <p className="text-sm text-gray-500">
-                    ⏳ Remaining Sessions: {trainer.remaining} of {trainer.total}
+                    ⏳ Remaining Sessions: {trainer.remaining} of{" "}
+                    {trainer.total}
                   </p>
                 </div>
               </div>
@@ -209,13 +217,13 @@ const Page = () => {
         </div>
       </Drawer>
 
-      {/* 🔹 BookingNextSession Modal */}
+     
       <BookingNextSession
         open={rescheduleOpen}
         onClose={closeReschedule}
-        trainer={selectedTrainer} // selected trainer data pass kora hocche
+        trainer={selectedTrainer} 
       />
- {/* <BookingNextSession
+      {/* <BookingNextSession
         open={rescheduleOpen}
         onClose={closeReschedule}
       ></BookingNextSession> */}

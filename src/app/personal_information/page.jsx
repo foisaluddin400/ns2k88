@@ -37,14 +37,14 @@ export default function ProfileCard() {
     <div className="-mt-20 -mb-20">
       {/* Header */}
       <Navigate></Navigate>
-      <div className="px-3 border-b">
+      <div className="px-3 ">
         <div className="flex flex-col items-center gap-6">
-          <div className="relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-teal-500/20">
-            <Image
-              src="/images/image.png"
+          <div className="relative w-24 h-24  ">
+            <img
+              src="https://i.pravatar.cc/150?img=33"
               alt="Profile"
               fill
-              className="object-cover"
+              className="object-cover rounded-3xl"
             />
           </div>
           <div className="text-center">
@@ -65,7 +65,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Content */}
-      <div className="px-8 py-8 space-y-6">
+      <div className="px-3 py-8 space-y-6">
         {/* Full Name */}
         <div>
           <label className="text-xs font-semibold uppercase text-gray-500">
@@ -98,7 +98,7 @@ export default function ProfileCard() {
               }
             />
           ) : (
-            <p className="profile-box">{profile.address}</p>
+            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.address}</p>
           )}
         </div>
 
@@ -117,7 +117,7 @@ export default function ProfileCard() {
                 }
               />
             ) : (
-              <p className="profile-box">{profile.city}</p>
+              <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.city}</p>
             )}
           </div>
 
@@ -134,7 +134,7 @@ export default function ProfileCard() {
                 }
               />
             ) : (
-              <p className="profile-box">{profile.postalCode}</p>
+              <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.postalCode}</p>
             )}
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function ProfileCard() {
               }
             />
           ) : (
-            <p className="profile-box">{profile.country}</p>
+            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.country}</p>
           )}
         </div>
 
@@ -172,7 +172,7 @@ export default function ProfileCard() {
               }
             />
           ) : (
-            <p className="profile-box">{profile.email}</p>
+            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.email}</p>
           )}
         </div>
 
@@ -190,13 +190,13 @@ export default function ProfileCard() {
               }
             />
           ) : (
-            <p className="profile-box">{profile.phoneNumber}</p>
+            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.phoneNumber}</p>
           )}
         </div>
       </div>
 
       {/* Buttons */}
-      <div className="px-8 py-8 bg-gray-50 border-t flex gap-3">
+      <div className="px-8 py-8 bg-gray-50  flex gap-3">
         {!isEditing ? (
           <button
             onClick={() => {

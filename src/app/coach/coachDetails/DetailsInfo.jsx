@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { Star, MapPin, Briefcase, Award, Info } from "lucide-react";
-import { MarkIcon } from "@/constant/svg.icon";
+import { LocationIcon, MarkIcon } from "@/constant/svg.icon";
 import { Modal } from "antd";
 import Link from "next/link";
 import { Navigate } from "@/components/Navigate";
 import CertifcateIcon from "./CertifcateIcon";
+import InfoIcon from "./InfoIcon";
 
 export default function DetailsInfo() {
   const [selectedDate, setSelectedDate] = useState(20);
@@ -45,7 +46,7 @@ export default function DetailsInfo() {
         <div className="flex items-start justify-between mb-4">
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-2xl italic font-bold ">Ann Smith, 26</h1>
+              <h1 className="text-[20px] italic font-bold ">Ann Smith, 26</h1>
               <span>
                 <MarkIcon></MarkIcon>
               </span>
@@ -80,13 +81,11 @@ export default function DetailsInfo() {
 
           <div className="space-y-3">
             {/* Location */}
-            <div className="bg-white shadow-sm border p-4 rounded-2xl flex items-start justify-between">
-              <div className="flex gap-3">
-                <MapPin className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+            <div className="bg-white shadow-sm border p-4 rounded-2xl flex  justify-between">
+              <div className="flex items-center gap-3">
+                <LocationIcon></LocationIcon>
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase">
-                    Location
-                  </p>
+                  <p className="text-xs text-[#A3A9B0]  uppercase">Location</p>
                   <p className="text-gray-900 font-medium">
                     Los Angeles, CA - Griffith Park Fields
                   </p>
@@ -111,7 +110,7 @@ export default function DetailsInfo() {
 
             {/* Experience */}
             <div className="bg-white shadow-sm border p-4 rounded-2xl">
-              <div className="flex gap-3">
+              <div className="flex items-center  gap-3">
                 <svg
                   width="18"
                   height="18"
@@ -162,17 +161,15 @@ export default function DetailsInfo() {
                 </svg>
 
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase">
-                    Experience
-                  </p>
+                  <p className="text-xs text-[#A3A9B0] uppercase">Experience</p>
                   <p className="text-gray-900 font-medium">5 years</p>
                 </div>
               </div>
             </div>
 
             {/* Certificate */}
-            <div className="bg-white shadow-sm border p-4 rounded-2xl flex items-start justify-between">
-              <div className="flex gap-3">
+            <div className="bg-white shadow-sm border p-4 rounded-2xl flex  justify-between">
+              <div className="flex items-center  gap-3">
                 <svg
                   width="18"
                   height="18"
@@ -197,7 +194,7 @@ export default function DetailsInfo() {
                 </svg>
 
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase">
+                  <p className="text-xs text-[#A3A9B0]  uppercase">
                     Certificate
                   </p>
                   <p className="text-gray-900 font-medium">3</p>
@@ -233,43 +230,39 @@ export default function DetailsInfo() {
 
         {/* About Me */}
         <div className="mt-8">
-          <h2 className="text-lg font-bold italic mb-3">About me</h2>
+          <h2 className="text-[14px] font-bold italic mb-3">About me</h2>
           <p className="bg-white shadow-sm border p-4 rounded-2xl text-sm leading-relaxed">
             I help my clients improve strength, mobility and balance. My focus
             is on holistic training and sustainable results.
-            <button className="text-teal-600 font-semibold ml-1">
-              See More
-            </button>
+            <button className="  ml-1">See More</button>
           </p>
         </div>
 
         {/* Availability Preview */}
         <div className="mt-8">
-          <h2 className="text-lg font-bold italic mb-4">
+          <h2 className="text-[14px] font-bold italic mb-4">
             Availability preview
           </h2>
 
           {/* Calendar */}
-          <div className="bg-white shadow-sm border  rounded-2xl p-4 mb-4">
+          <div className="bg-white shadow-sm border rounded-2xl p-4 mb-4">
             <div className="grid grid-cols-7 gap-2 mb-6">
               {daysOfWeek.map((day, idx) => (
                 <div
                   key={idx}
                   className={`text-center ${
                     selectedDate === dateRange[idx]
-                      ? "border border-secondary bg-secondary rounded-md p-1"
-                      : "bg-gray-50 rounded-md"
+                      ? "border border-secondary bg-[#0A7676] rounded-md p-1 text-white"
+                      : "bg-gray-50  rounded-md"
                   }`}
                 >
-                  <p className="text-xs text-gray-500 font-semibold mb-2">
-                    {day}
-                  </p>
+                  <p className="text-xs  mb-2">{day}</p>
                   <button
                     onClick={() => setSelectedDate(dateRange[idx])}
                     className={`w-full py-2 flex items-center justify-center rounded-lg font-semibold text-sm transition-colors ${
                       selectedDate === dateRange[idx]
                         ? "bg-white text-black"
-                        : "text-gray-600 hover:bg-gray-100"
+                        : " hover:bg-gray-100"
                     }`}
                   >
                     {dateRange[idx]}
@@ -286,7 +279,7 @@ export default function DetailsInfo() {
                   onClick={() => setSelectedTime(time)}
                   className={`py-2 bg-gray-50 rounded-lg text-sm font-medium transition-colors ${
                     selectedTime === time
-                      ? "bg-white border-2 border-teal-600 text-teal-600"
+                      ? "bg-white border border-black "
                       : "text-gray-400"
                   }`}
                 >
@@ -297,15 +290,15 @@ export default function DetailsInfo() {
           </div>
 
           {/* Cancellation Policy */}
-          <div className="bg-white shadow-sm border p-4 rounded-2xl flex gap-3">
-            <div className="bg-accent w-9 h-9 flex justify-center items-center rounded ">
-              <Info className="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5" />
+          <div className="bg-white shadow-sm border p-3 rounded-2xl flex gap-3">
+            <div className="bg-accent w-11 h-11 flex justify-center items-center rounded ">
+              <InfoIcon></InfoIcon>
             </div>
             <div>
-              <p className="font-semibold text-gray-900 text-sm">
+              <p className="font-bold text-gray-900 text-sm">
                 Cancellations Policy
               </p>
-              <p className="text-xs text-gray-600 mt-1">
+              <p className="text-xs text-[#A3A9B0] mt-1">
                 Cancellations Less Than 12 Hours Before The Session Will Be
                 Charged
               </p>
@@ -313,11 +306,9 @@ export default function DetailsInfo() {
           </div>
         </div>
 
-      
-
         {/* Book Now Button */}
         <Link href={"/book"}>
-          <button className="w-full mt-8 mb-8 bg-primary text-white font-bold py-3 rounded-lg transition-colors">
+          <button className="w-full mt-8 mb-8 bg-primary text-white font-bold py-3 rounded-2xl italic transition-colors">
             Book now
           </button>
         </Link>

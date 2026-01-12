@@ -73,6 +73,7 @@ const ResheduleDrawer = ({ open, onClose }) => {
           disabledDate={disabledDate}
           dateCellRender={dateCellRender}
           onSelect={(value) => setSelectedDate(value.format("YYYY-MM-DD"))}
+            
         />
 
         {selectedDate && (
@@ -101,7 +102,7 @@ const ResheduleDrawer = ({ open, onClose }) => {
 
         <Link href={"/booking-confirmed"}>
           {" "}
-          <button className="bg-[#0A7676] w-full text-white py-3 px-6 rounded-xl font-semibold">
+          <button className="bg-[#0A7676] mt-4 w-full text-white py-3 px-6 rounded-xl font-semibold">
             Proceed anyway
           </button>
         </Link>
