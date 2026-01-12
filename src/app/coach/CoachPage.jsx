@@ -122,7 +122,7 @@ const CoachPage = () => {
   return (
     <>
       {/* Main Page Content */}
-      <div className="px-3 bg-gray-50 mt-28">
+      <div className="px-3 bg-gray-50 ">
         <h1 className="text-xl font-semibold mt-4 mb-2 italic">Who are you looking for today?</h1>
         {/* Search + Filter */}
         <div className="flex sticky top-5 z-40 w-full items-center gap-4 pt-1 pb-4 bg-gray-50">
@@ -143,14 +143,14 @@ const CoachPage = () => {
 
         {/* Tabs */}
         <div className="mb-8">
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide bg-accent rounded-lg p-1 shadow-sm">
+          <div className="flex  overflow-x-auto scrollbar-hide bg-accent rounded-lg p-1 shadow-sm">
             {["All coaches", "Most popular", "Best rated"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 w-full py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                className={` w-full py-3 rounded-lg text-[12px] font-medium whitespace-nowrap transition-all ${
                   activeTab === tab
-                    ? "bg-white text-black shadow-sm"
+                    ? "bg-white text-black "
                     : "text-gray-600 hover:bg-gray-200"
                 }`}
               >

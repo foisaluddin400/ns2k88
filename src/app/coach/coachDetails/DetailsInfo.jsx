@@ -320,12 +320,12 @@ export default function DetailsInfo() {
 
         {/* Tabs */}
         <div className="mb-8">
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide bg-accent rounded-lg p-1 shadow-sm">
+          <div className="flex overflow-x-auto scrollbar-hide bg-accent rounded-lg p-1 shadow-sm">
             {Object.keys(tabContent).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 w-full py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                className={`px-6 w-full py-3 rounded-lg text-[12px] font-medium whitespace-nowrap transition-all ${
                   activeTab === tab
                     ? "bg-white text-black shadow-sm"
                     : "text-gray-600 hover:bg-gray-200"
