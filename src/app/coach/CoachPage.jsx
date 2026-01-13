@@ -161,7 +161,7 @@ const CoachPage = () => {
         </div>
 
         {/* Coaches List */}
-        <div className="space-y-4 ">
+        <div className="space-y-3 ">
           {coaches.map((coach) => (
             <Link href={"/coach/coachDetails"} key={coach.id}>
               <div className="bg-white mb-2 rounded-3xl  border  hover:shadow-md transition-shadow cursor-pointer">

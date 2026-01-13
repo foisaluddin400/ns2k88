@@ -87,7 +87,7 @@ const ChatPage = () => {
       </div>
 
       {/* Search */}
-      <div className="p-4">
+      <div className="py-4">
         <input
           type="text"
           placeholder="Search..."
@@ -103,7 +103,7 @@ const ChatPage = () => {
             href={`/chat/${user.id}`}
             className="block"
           >
-            <div className="flex items-center gap-3 px-4 py-4 border-b cursor-pointer hover:bg-gray-50">
+            <div className="flex items-center gap-3 py-4 border-b cursor-pointer hover:bg-gray-50">
               <img
                 src={user.avatar}
                 className="w-12 h-12 rounded-2xl"

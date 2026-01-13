@@ -37,7 +37,7 @@ export default function ProfileCard() {
     <div className="-mt-20 -mb-20">
       {/* Header */}
       <Navigate></Navigate>
-      <div className="px-3 ">
+      <div className=" ">
         <div className="flex flex-col items-center gap-6">
           <div className="relative w-24 h-24  ">
             <img
@@ -65,7 +65,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Content */}
-      <div className="px-3 py-8 space-y-6">
+      <div className=" py-8 space-y-6">
         {/* Full Name */}
         <div>
           <label className="text-xs font-semibold uppercase text-gray-500">
@@ -196,7 +196,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Buttons */}
-      <div className="px-8 py-8 bg-gray-50  flex gap-3">
+      <div className=" py-8 bg-gray-50  flex gap-3">
         {!isEditing ? (
           <button
             onClick={() => {

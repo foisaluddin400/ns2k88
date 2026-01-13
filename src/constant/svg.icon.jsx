@@ -29,8 +29,8 @@ export const FilterIcon = ({ width = "20", height = "20" }) => {
 };
 
 export const CalenderIcon = ({
-  width = "40",
-  height = "40",
+  width ,
+  height,
   strock,
   color = "black",
 }) => {

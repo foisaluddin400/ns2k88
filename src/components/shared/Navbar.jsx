@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import HomeIcon from "./HomeIcon";
 import ClientIcon from "./ClientIcon";
 import CalenderIcon from "./CalenderIcon";
@@ -10,8 +11,16 @@ import UserIcon from "./UserIcon";
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const [role, setRole] = useState(null);
 
-  const navItems = [
+  // 🔹 get role from localStorage
+  useEffect(() => {
+    const storedRole = localStorage.getItem("role");
+    setRole(storedRole);
+  }, []);
+
+  // 🔹 Client Nav
+  const clientNavItems = [
     {
       label: "Home",
       path: "/",
@@ -30,10 +39,7 @@ export const Navbar = () => {
       label: "Booking",
       path: "/booking",
       icon: (active) => (
-        <CalenderIcon
-          color={active ? "white" : "#A3A9B0"}
-          className="w-7 h-7"
-        />
+        <CalenderIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
       ),
     },
     {
@@ -52,11 +58,55 @@ export const Navbar = () => {
     },
   ];
 
+  // 🔹 Trainer Nav
+  const trainerNavItems = [
+    {
+      label: "Home",
+      path: "/trainer",
+      icon: (active) => (
+        <HomeIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
+      ),
+    },
+    {
+      label: "Coach",
+      path: "/trainer/coach",
+      icon: (active) => (
+        <ClientIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
+      ),
+    },
+    {
+      label: "Calendar",
+      path: "/trainer/calendar",
+      icon: (active) => (
+        <CalenderIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
+      ),
+    },
+    {
+      label: "Chat",
+      path: "/trainer/chat",
+      icon: (active) => (
+        <ChatIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
+      ),
+    },
+    {
+      label: "Profile",
+      path: "/trainer/profile",
+      icon: (active) => (
+        <UserIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
+      ),
+    },
+  ];
+
+  const navItems =
+    role === "trainer" ? trainerNavItems : clientNavItems;
+
   const isPathActive = (item) => pathname === item.path;
 
+  // ⏳ prevent hydration issue
+  if (!role) return null;
+
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white  z-50">
-      {/* Center container like layout */}
+    <div className="fixed bottom-0 left-0 w-full bg-white z-50">
       <div className="max-w-3xl mx-auto border-t flex items-center justify-between px-4 py-2">
         {navItems.map((item, idx) => (
           <Link
