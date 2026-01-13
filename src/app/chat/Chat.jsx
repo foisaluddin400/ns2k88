@@ -74,7 +74,7 @@ const chatUsers = [
 
 const ChatPage = () => {
   return (
-    <div className="px-3">
+    <div className="">
       {/* Header */}
       <div className="flex -mt-[70px] justify-between items-center">
         <Navigate />

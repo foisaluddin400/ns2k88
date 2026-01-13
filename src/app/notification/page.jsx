@@ -28,7 +28,7 @@ const notifications = [
 
 const Notification = () => {
   return (
-   <div className="px-3 -mt-20 -mb-20">
+   <div className=" -mt-20 -mb-20">
       <Navigate></Navigate>
       <div className=" space-y-3">
         {notifications.map((item) => (

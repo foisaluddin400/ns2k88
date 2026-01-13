@@ -10,7 +10,7 @@ export default function Page() {
   const [showConfirm, setShowConfirm] = useState(false)
 
   return (
-    <div className="  px-3 -mt-20 -mb-20">
+    <div className="-mt-20 -mb-20">
       <Navigate></Navigate>
       {/* Old Password */}
       <div className="mb-6">

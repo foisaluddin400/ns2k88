@@ -9,7 +9,7 @@ export const Navigate = ({ title }) => {
 
   return (
     <div className="">
-      <div className="py-3 px-3 my-2">
+      <div className="py-3 my-2">
         <div
           style={{
             display: "flex",

@@ -43,7 +43,7 @@ const BookSession = () => {
   };
 
   return (
-    <div className="px-3 -mt-20 -mb-20">
+    <div className=" -mt-20 -mb-20">
         <Navigate></Navigate>
       <h2 className="text-xl font-semibold mb-4">Book a Session</h2>
 

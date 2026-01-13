@@ -83,7 +83,7 @@ export default function ClientLayout({ children }) {
             </div>
           )}
         </div>
-        <div className=" text-black flex-grow mt-20 mb-20">{children}</div>
+        <div className=" text-black flex-grow mt-20 mb-20 px-3">{children}</div>
         <div className=" ">
           {!hideNavbarFooter && (
             <div>

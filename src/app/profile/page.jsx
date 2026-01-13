@@ -49,7 +49,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className=" px-3 text-gray-600">
+    <div className=" text-gray-600">
       {/* Profile Header */}
       <div className="text-center space-y-2">
         <div className="w-24 h-24 mx-auto rounded-full overflow-hidden">

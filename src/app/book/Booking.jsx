@@ -40,7 +40,7 @@ const Booking = () => {
   const [selected, setSelected] = useState("trial");
 
   return (
-    <div className="px-3 -mt-20 -mb-20">
+    <div className=" -mt-20 -mb-20">
       <Navigate></Navigate>
       {/* Coach info */}
       <div className="flex bg-white  rounded-3xl border border  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-3">

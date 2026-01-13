@@ -59,7 +59,7 @@ const sessions = [
 ];
 const Hero = () => {
   return (
-    <div className="px-3 mt-3 font-style">
+    <div className=" mt-3 font-style">
       <div>
         <h1 className="text-2xl font-bold italic ">Hello, Alex!</h1>
       </div>

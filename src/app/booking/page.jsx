@@ -83,7 +83,7 @@ const Page = () => {
   };
 
   return (
-    <div className="px-3">
+    <div className="">
       <h2 className="text-[14px] font-semibold text-black italic mb-3 mt-7">
         My Bookings
       </h2>

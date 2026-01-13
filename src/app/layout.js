@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} bg-black ${geistMono.variable} ${style.variable} antialiased`}
       >
         <ReduxProvider>
-          <div className="font-style">
+          <div className="font-style ">
             <ClientLayout>{children}</ClientLayout>
           </div>
         </ReduxProvider>

@@ -71,7 +71,7 @@ const ChatDetailsPage = () => {
   return (
     <div className="min-h-[91vh] flex flex-col -mb-20">
       {/* Header */}
-      <div className="flex justify-between -mt-20 p-4 py-7 items-center relative">
+      <div className="flex justify-between -mt-20 py-7 items-center relative">
         <div className="flex items-center gap-3">
           <button
             onClick={() => router.back()}
@@ -115,7 +115,7 @@ const ChatDetailsPage = () => {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 p-4 space-y-3 overflow-y-auto">
+      <div className="flex-1 space-y-3 overflow-y-auto">
         {messages.map((msg) => (
           <div
             key={msg.id}

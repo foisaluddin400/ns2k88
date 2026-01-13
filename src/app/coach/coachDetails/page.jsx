@@ -18,7 +18,7 @@ const page = () => {
   const images = [image, image1, image2];
 
   return (
-    <div className="px-4 -mt-20">
+    <div className=" -mt-20">
       <div className="flex justify-between items-center">
         <Navigate ></Navigate>
         <div className="flex gap-2">
@@ -35,7 +35,7 @@ const page = () => {
           type: "loop",
           perPage: 1,
           gap: "1.25rem",
-          padding: "0.5rem",
+          padding: "0rem",
           pagination: true,
           arrows: false,
           drag: true,
@@ -52,7 +52,7 @@ const page = () => {
       >
         {images.map((img, idx) => (
           <SplideSlide key={idx}>
-            <div className="w-full h-[30vh] rounded-xl overflow-hidden shadow-md">
+            <div className="w-full h-[30vh] rounded overflow-hidden shadow-md">
               <Image
                 src={img}
                 alt={`slider-image-${idx}`}

@@ -4,7 +4,7 @@ import React from "react";
 
 const Imprint = () => {
   return (
-    <div className="px-3 -mt-20 -mb-20">
+    <div className=" -mt-20 -mb-20">
       <Navigate></Navigate>
       <div className="">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">

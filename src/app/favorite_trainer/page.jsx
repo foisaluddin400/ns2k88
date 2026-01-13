@@ -79,7 +79,7 @@ const Favorite = () => {
   ];
 
   return (
-    <div className="px-3 -mt-20 -mb-20">
+    <div className=" -mt-20 -mb-20">
       <Navigate></Navigate>
       <div className="space-y-4 ">
         {coaches.map((coach) => (

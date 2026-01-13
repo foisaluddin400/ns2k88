@@ -44,7 +44,7 @@ const ViewAllReview = () => {
   ];
 
   return (
-    <div className="px-3">
+    <div className="">
         <h2 className=" mb-2 font-semibold">Review - 23</h2>
       {reviews.map((review) => (
         <div key={review.id}  className="bg-white rounded-3xl mb-3 p-4 shadow-sm border border-gray-200 h-full">

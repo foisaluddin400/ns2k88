@@ -7,7 +7,7 @@ import { FaStar } from "react-icons/fa6";
 
 const BookProccess = () => {
   return (
-    <div className="px-3 -mt-20 -mb-20">
+    <div className=" -mt-20 -mb-20">
       <Navigate></Navigate>
        <div className="flex bg-white  rounded-3xl shadow-sm border border-gray-100  hover:shadow-md transition-shadow items-center gap-3 mb-6 p-4">
         <Image
