@@ -8,6 +8,7 @@ import { ChatIcon, MarkIcon, RemainningIcon } from "@/constant/svg.icon";
 import BookingList from "./BookingList";
 import { Drawer, Modal } from "antd";
 import BookingNextSession from "./BookingNextSession";
+import { X } from "lucide-react";
 
 const Page = () => {
   const sessions = [
@@ -161,20 +162,37 @@ const Page = () => {
       </button>
 
       {/* 🔹 Drawer for Trainer Selection */}
-      <Drawer
-        placement="bottom"
-        height="60%"
-        open={drawerOpen}
-        onClose={closeDrawer}
-        closable={false}
-        className="app-drawer"
-      >
-        <div
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          className="p-4"
-        >
+     <Drawer
+  placement="bottom"
+  height="60%"
+  open={drawerOpen}
+  onClose={closeDrawer}
+  closable={false}
+  className="app-drawer"
+  getContainer={false}
+  style={{
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
+    maxWidth: "768px",
+    width: "100%",
+  }}
+>
+
+      <div
+  onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}
+  className=" relative"
+>
+  {/* ❌ CLOSE BUTTON */}
+  <button
+    onClick={closeDrawer}
+    className="absolute right-1 top-1 p-2 rounded-full hover:bg-gray-100"
+  >
+    <X size={20} />
+  </button>
+
           <h2 className="text-lg font-semibold mb-4 text-center">
             Select Your Trainer
           </h2>

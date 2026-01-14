@@ -1,12 +1,28 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/img/logo5.png";
 import { FaGoogle, FaApple } from "react-icons/fa";
+import GoogleIcon from "../signUp/GoogleIcon";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
+    const router = useRouter();
+
+  const handleRedirect = () => {
+    const storedRole = localStorage.getItem("role"); // "client" | "trainer"
+
+    if (storedRole === "trainer") {
+      router.push("/trainer");
+    } else {
+      // default client
+      router.push("/client");
+    }
+  };
+
   return (
     <div>
-      <div className="px-3">
+      <div className="">
         {/* Logo */}
         <div className="flex justify-center mt-11">
           <Image src={logo} alt="logo" width={100} />
@@ -24,7 +40,7 @@ export default function SignIn() {
             </label>
             <input
               type="email"
-              className="mt-1 w-full p-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+              className="mt-1 w-full p-2 border bg-whiterounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-white rounded-lg"
               placeholder="Email"
             />
           </div>
@@ -34,33 +50,29 @@ export default function SignIn() {
               <label className="block text-sm font-semibold text-gray-700">
                 Password
               </label>
-              <Link
-                href="/signIn/forgot"
-                className="text-sm text-primary hover:underline"
-              >
-                Forgot
-              </Link>
             </div>
             <input
               type="password"
-              className="mt-1 w-full p-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 w-full p-2 border bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="Password"
             />
           </div>
-
-          <p className="text-sm text-gray-600 text-center">
-            Don&apos;t have an account?{" "}
-            <Link href="/auth" className="text-primary hover:underline">
-              Register
+          <div className="text-end">
+            <Link
+              href="/signIn/forgot"
+              className="text-sm  text-primary hover:underline"
+            >
+              Forgot Your Password?
             </Link>
-          </p>
+          </div>
 
-          <Link href={'/'}><button
-            type="submit"
-            className="w-full py-2 bg-primary text-white font-semibold rounded"
-          >
-            SIGN IN
-          </button></Link>
+        <button
+      type="button"
+      onClick={handleRedirect}
+      className="w-full py-2 bg-primary text-white mt-4 rounded"
+    >
+      SIGN IN
+    </button>
         </form>
 
         {/* Divider */}
@@ -77,7 +89,7 @@ export default function SignIn() {
             type="button"
             className="w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
           >
-            <FaGoogle className="text-red-500 text-3xl" />
+            <GoogleIcon></GoogleIcon>
           </button>
 
           {/* Apple */}
@@ -88,6 +100,13 @@ export default function SignIn() {
             <FaApple className="text-black text-3xl" />
           </button>
         </div>
+
+        <p className="text-sm mt-11 text-gray-600 text-center">
+          New here? <br />
+          <Link href="/" className="text-primary hover:underline">
+            Register Now
+          </Link>
+        </p>
       </div>
     </div>
   );

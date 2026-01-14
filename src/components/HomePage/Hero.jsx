@@ -127,7 +127,7 @@ const Hero = () => {
                     <h3 className=" text-[14px] font-bold flex items-center gap-2 text-gray-900 truncate">
                       {session.name}, {session.age} <Svg></Svg>
                     </h3>
-                    <button className="bg-[#E2F8F8] hover:bg-teal-600 text-primary text-sm px-2 py-1 rounded-full transition whitespace-nowrap">
+                    <button className="bg-[#E2F8F8]  text-primary text-sm px-2 py-1 rounded-full transition whitespace-nowrap">
                       Confirm
                     </button>
                   </div>

@@ -1,10 +1,31 @@
+'use client'
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const TopBar = () => {
+    const router = useRouter();
+
+  const handleRedirect = () => {
+    const storedRole = localStorage.getItem("role"); // "client" | "trainer"
+
+    if (storedRole === "trainer") {
+      router.push("/trainer");
+    } else {
+      // default client
+      router.push("/client");
+    }
+  };
+<button
+      type="button"
+      onClick={handleRedirect}
+      className="w-full py-2 bg-primary text-white mt-4 rounded"
+    >
+      SIGN IN
+    </button>
   return (
     <div className="flex justify-between items-center">
-     <Link href={'/'}> <svg
+     <button onClick={handleRedirect}> <svg
         width="111"
         height="19"
         viewBox="0 0 111 19"
@@ -39,7 +60,7 @@ const TopBar = () => {
           d="M109.888 7.95968C109.619 7.31897 109.232 6.77167 108.737 6.33252C108.246 5.89664 107.654 5.56317 106.981 5.34196C106.314 5.12238 105.578 5.01177 104.795 5.01177C103.955 5.01177 103.174 5.15597 102.475 5.44109C101.779 5.7254 101.165 6.1113 100.65 6.58896C100.173 7.03303 99.7771 7.54265 99.4731 8.10634V0H96.0377V19H99.4731V10.9494C99.5919 10.5938 99.7714 10.2538 100.007 9.93915C100.407 9.40578 100.932 8.97072 101.566 8.64463C102.201 8.31936 102.912 8.15468 103.682 8.15468C104.452 8.15468 105.076 8.27103 105.534 8.49962C105.985 8.72575 106.31 9.042 106.526 9.46559C106.745 9.89737 106.857 10.4529 106.857 11.1173V19H110.292V10.1628C110.292 9.3386 110.156 8.59793 109.888 7.95968Z"
           fill="#0A7676"
         />
-      </svg></Link>
+      </svg></button>
 
       <div className="border  w-[40px] h-[40px] flex justify-center items-center rounded-full">
        <Link href={'/notification'}> <svg

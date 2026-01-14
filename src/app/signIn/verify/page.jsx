@@ -39,7 +39,7 @@ const Page = () => {
                       key={i}
                       type="text"
                       maxLength="1"
-                      className="bg-[#00000000] text-3xl text-center border rounded border-black md:h-[70px] h-[50px] focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="bg-[#00000000] text-3xl text-center border  bg-white rounded-lg md:h-[70px] h-[50px] focus:outline-none focus:ring-2 focus:ring-primary"
                       onInput={(e) => handleInputChange(e, i)}
                       ref={(el) => (inputRefs.current[i] = el)} 
                     />

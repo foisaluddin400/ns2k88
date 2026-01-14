@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import logo from "../../../public/img/logo5.png";
 import { FaApple, FaGoogle } from "react-icons/fa6";
+import GoogleIcon from "./GoogleIcon";
 export default function SignUp() {
   return (
     <div>
@@ -15,7 +16,7 @@ export default function SignUp() {
           Create your account
         </h1>
         <p className="text-center mb-2">Join us and start your fitness journey</p>
-        <form className="space-y-6 px-3">
+        <form className="space-y-6 ">
           <div>
             <label
               htmlFor="name"
@@ -27,7 +28,7 @@ export default function SignUp() {
               type="text"
               id="name"
               placeholder="Enter your name"
-              className="mt-1 block w-full p-2 border border-black bg-[#00000000] rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border  bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -42,7 +43,7 @@ export default function SignUp() {
               type="tel"
               id="contact"
               placeholder="+88##########48"
-              className="mt-1 block w-full p-2 border border-black bg-[#00000000] rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -57,7 +58,7 @@ export default function SignUp() {
               type="email"
               id="email"
               placeholder=".....@gmail.com"
-              className="mt-1 block w-full p-2 border border-black bg-[#00000000] rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -72,7 +73,7 @@ export default function SignUp() {
               type="password"
               id="password"
               placeholder="New Password"
-              className="mt-1 block w-full p-2 border border-black bg-[#00000000] rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -87,7 +88,7 @@ export default function SignUp() {
               type="password"
               id="confirm-password"
               placeholder="Enter your password"
-              className="mt-1 block w-full p-2 border border-black bg-[#00000000] rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -102,16 +103,16 @@ export default function SignUp() {
               type="text"
               id="address"
               placeholder="Dhaka, Bangladesh"
-              className="mt-1 block w-full p-2 border border-black bg-[#00000000] rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <Link href={"/"}>
             <button
               type="submit"
-              className="w-full py-2 mt-5 px-4 bg-primary text-white font-semibold rounded  focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full py-2 mt-5 px-4 bg-primary text-white  rounded-xl  focus:outline-none focus:ring-2 focus:ring-primary"
             >
-              SIGN UP
+              Register
             </button>
           </Link>
         </form>
@@ -129,7 +130,7 @@ export default function SignUp() {
                     type="button"
                     className="w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
                   >
-                    <FaGoogle className="text-red-500 text-3xl" />
+                    <GoogleIcon></GoogleIcon>
                   </button>
         
                   {/* Apple */}

@@ -195,7 +195,7 @@ const TrainCoach = () => {
                     <Link href={'/chat'}><div className="flex justify-end">
                       <TrainChatIcon></TrainChatIcon>
                     </div></Link>
-                    <span className="text-[#A3A9B0] ">8 of 10</span>
+                    <span className="text-[#A3A9B0] text-[14px]">8 of 10</span>
                   </div>
                 </div>
               </div>

@@ -229,13 +229,21 @@ const CoachPage = () => {
           onClose={() => setIsFilterOpen(false)}
           closable={false}
           height="90%"
-          
+            getContainer={false}
+  style={{
+    position: "absolute",
+    left: "50%",                 // ✅ ADD
+    transform: "translateX(-50%)", // ✅ ADD
+    maxWidth: "768px",            // 3xl
+    width: "100%",
+    
+  }}
        
         >
           {/* Drag Handle */}
         
           {/* Header */}
-          <div className="flex items-center justify-between px-6 pt-4 pb-3 border-b border-gray-200">
+          <div className="flex items-center justify-between   border-b border-gray-200">
             <h2 className="text-xl font-bold text-gray-900">Filter</h2>
             <button
               onClick={() => setIsFilterOpen(false)}
@@ -246,7 +254,7 @@ const CoachPage = () => {
           </div>
 
           {/* Scrollable Content */}
-          <div className="flex-1 overflow-y-auto px-6 py-6 space-y-8">
+          <div className="flex-1 overflow-y-auto  py-6 space-y-4">
             <p className="text-sm text-gray-500">
               Lorem ipsum dolor sit amet consectetur.
             </p>

@@ -8,8 +8,14 @@ import TopBar from "@/components/shared/TopBar";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
+const isHome = pathname === "/";
+const isAuthRoute = pathname.startsWith("/auth");
+
+const noPadding = isHome || isAuthRoute;
+
 
   const hideNavbarFooter =
+  pathname === "/" ||
     pathname === "/signIn" ||
     pathname === "/auth" ||
     pathname === "/book" ||
@@ -42,6 +48,7 @@ export default function ClientLayout({ children }) {
     pathname === "/signUp/accountverify";
 
   const hideNavbarNav =
+  pathname === "/" ||
     pathname === "/signIn" ||
     pathname === "/book-proccess" ||
     pathname === "/favorite_trainer" ||
@@ -83,7 +90,14 @@ export default function ClientLayout({ children }) {
             </div>
           )}
         </div>
-        <div className=" text-black flex-grow mt-20 mb-20 px-3">{children}</div>
+        <div
+  className={`text-black flex-grow mt-20 mb-20 ${
+    noPadding ? "" : "px-3"
+  }`}
+>
+  {children}
+</div>
+
         <div className=" ">
           {!hideNavbarFooter && (
             <div>

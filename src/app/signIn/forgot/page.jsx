@@ -29,7 +29,7 @@ const forgot = () => {
               <input
                 type="email"
                 id="email"
-                className="mt-1 w-full p-2 border  border-black rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-[#00000000]"
+                className="mt-1 w-full p-2 border  bg-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-primary bg-[#00000000]"
                 placeholder="Email"
                 required
               />

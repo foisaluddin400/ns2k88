@@ -61,7 +61,7 @@ const Page = () => {
 
   return (
     <div className=" -mt-20 -mb-20">
-         <Navigate></Navigate>
+      <Navigate></Navigate>
       <div className="">
         {/* Header */}
         <h1 className="text-2xl font-semibold text-center mb-6">
@@ -119,7 +119,7 @@ const Page = () => {
           className="w-full border rounded-lg px-4 py-3 mb-6"
         />
 
-        <button className="w-full bg-teal-600 text-white py-3 rounded-full font-semibold">
+        <button className="w-full bg-primary text-white py-3 rounded-full font-semibold">
           Send message
         </button>
       </div>
@@ -131,10 +131,18 @@ const Page = () => {
         onClose={() => setTrainerDrawer(false)}
         closable={false}
         className="app-drawer"
+        getContainer={false}
+        style={{
+          position: "absolute",
+          left: "50%", // ✅ ADD
+          transform: "translateX(-50%)", // ✅ ADD
+          maxWidth: "768px", // 3xl
+          width: "100%",
+        }}
       >
         {/* Header */}
         <div
-          className="flex items-center justify-between px-4 py-2 "
+          className="flex items-center justify-between  py-2 "
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -150,11 +158,10 @@ const Page = () => {
 
         {/* Trainer List */}
         <div className=" py-3 space-y-4">
-            <Input
-           
+          <Input
             placeholder="Search by name..."
             prefix={<SearchOutlined />}
-            style={{ maxWidth: "100%", height: "40px", borderRadius: '30px' }}
+            style={{ maxWidth: "100%", height: "40px", borderRadius: "30px" }}
           />
           {trainers.map((trainer) => (
             <div

@@ -23,7 +23,7 @@ export const Navbar = () => {
   const clientNavItems = [
     {
       label: "Home",
-      path: "/",
+      path: "/client",
       icon: (active) => (
         <HomeIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
       ),
@@ -83,14 +83,14 @@ export const Navbar = () => {
     },
     {
       label: "Chat",
-      path: "/trainer/chat",
+      path: "/chat",
       icon: (active) => (
         <ChatIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
       ),
     },
     {
       label: "Profile",
-      path: "/trainer/profile",
+      path: "/profile",
       icon: (active) => (
         <UserIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
       ),

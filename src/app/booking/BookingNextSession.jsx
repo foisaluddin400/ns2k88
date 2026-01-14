@@ -5,7 +5,22 @@ import { Drawer } from "antd";
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+
+/* ===== CALENDAR DATA ===== */
+const availableDays = [2, 6, 21, 23, 24, 25, 26, 28];
+
+const bookedSlots = {
+  "2026-01-24": [{ time: "09:00 - 10:00" }],
+  "2026-01-12": [{ time: "10:00 AM" }],
+  "2026-01-18": [{ time: "02:00 PM" }],
+};
+
+const timeSlots = {
+  "2026-01-12": ["10:00 AM", "12:00 PM"],
+  "2026-01-13": ["09:00 AM", "11:00 AM", "04:00 PM"],
+  "2026-01-18": ["02:00 PM"],
+};
 
 const BookingNextSession = ({ open, onClose }) => {
   const sessions = [
@@ -19,56 +34,21 @@ const BookingNextSession = ({ open, onClose }) => {
     },
   ];
 
+  /* ===== STATE ===== */
   const [selectedDate, setSelectedDate] = useState(null);
-  const [currentMonth, setCurrentMonth] = useState(new Date(2026, 0));
+  const [currentMonth, setCurrentMonth] = useState(dayjs("2026-01-01"));
 
-  const soldDates = ["2026-01-10", "2026-01-15"];
-  const bookedDates = ["2026-01-12", "2026-01-18"];
+  const daysInMonth = currentMonth.daysInMonth();
+  const monthLabel = currentMonth.format("MMMM YYYY");
 
-  const timeSlots = {
-    "2026-01-12": ["10:00 AM", "12:00 PM"],
-    "2026-01-13": ["09:00 AM", "11:00 AM", "04:00 PM"],
-    "2026-01-18": ["02:00 PM"],
-  };
-
-  /* ============ CALENDAR LOGIC ============ */
-
-  const daysInMonth = new Date(
-    currentMonth.getFullYear(),
-    currentMonth.getMonth() + 1,
-    0
-  ).getDate();
-
-  const firstDay = new Date(
-    currentMonth.getFullYear(),
-    currentMonth.getMonth(),
-    1
-  ).getDay();
-
-  const days = [];
-  for (let i = 0; i < firstDay; i++) days.push(null);
-  for (let i = 1; i <= daysInMonth; i++) days.push(i);
-
-  const monthName = currentMonth.toLocaleString("default", {
-    month: "long",
-    year: "numeric",
-  });
+  const goPrev = () => setCurrentMonth((p) => p.subtract(1, "month"));
+  const goNext = () => setCurrentMonth((p) => p.add(1, "month"));
 
   const formattedDate = selectedDate
     ? dayjs(selectedDate).format("YYYY-MM-DD")
     : null;
 
-  const prevMonth = () =>
-    setCurrentMonth(
-      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1)
-    );
-
-  const nextMonth = () =>
-    setCurrentMonth(
-      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1)
-    );
-
-  /* ============ TOUCH CLOSE ============ */
+  /* ===== TOUCH CLOSE ===== */
   const [startY, setStartY] = useState(null);
   const handleTouchStart = (e) => setStartY(e.touches[0].clientY);
   const handleTouchMove = (e) => {
@@ -87,16 +67,34 @@ const BookingNextSession = ({ open, onClose }) => {
       open={open}
       onClose={onClose}
       closable={false}
-      className="app-drawer"
+      getContainer={false}
+      style={{
+        position: "absolute",
+        left: "50%",
+        transform: "translateX(-50%)",
+        maxWidth: "768px",
+        width: "100%",
+      }}
     >
       <div
-        className="p-6"
+        className="relative"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <h2 className="font-semibold text-lg mb-4">Reschedule Session</h2>
+        {/* CLOSE */}
+        <button
+          onClick={onClose}
+          className="absolute right-1 top-1 p-2 rounded-full hover:bg-gray-100"
+        >
+          <X size={20} />
+        </button>
 
+        <h2 className="font-semibold text-lg mb-4">
+          Reschedule Session
+        </h2>
+
+        {/* ===== SESSION CARD ===== */}
         {sessions.map((item) => (
           <div
             key={item.id}
@@ -122,55 +120,66 @@ const BookingNextSession = ({ open, onClose }) => {
           </div>
         ))}
 
-        {/* ===== CUSTOM CALENDAR ===== */}
-        <div className="border rounded-xl p-4">
+        {/* ===== CALENDAR (NEW DESIGN) ===== */}
+        <div className="bg-white rounded-[16px] border p-4 mb-6">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold">{monthName}</h3>
+            <h3 className="font-semibold text-lg">{monthLabel}</h3>
+
             <div className="flex gap-2">
-              <button onClick={prevMonth}>
-                <ChevronLeft />
+              <button
+                onClick={goPrev}
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
+              >
+                <ChevronLeft className="w-4 h-4" />
               </button>
-              <button onClick={nextMonth}>
-                <ChevronRight />
+              <button
+                onClick={goNext}
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
+              >
+                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-7 text-center text-sm mb-2">
-            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
-              <div key={d}>{d}</div>
+          <div className="grid grid-cols-7 gap-3 text-center text-sm">
+            {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map((d) => (
+              <span key={d} className="text-gray-400">
+                {d}
+              </span>
             ))}
-          </div>
 
-          <div className="grid grid-cols-7 gap-2">
-            {days.map((day, idx) => {
-              if (!day) return <div key={idx} />;
+            {Array.from({ length: daysInMonth }).map((_, i) => {
+              const day = i + 1;
+              const date = currentMonth.date(day);
+              const dateStr = date.format("YYYY-MM-DD");
 
-              const dateObj = new Date(
-                currentMonth.getFullYear(),
-                currentMonth.getMonth(),
-                day
-              );
-              const dateStr = dayjs(dateObj).format("YYYY-MM-DD");
+              const isAvailable =
+                availableDays.includes(day) || bookedSlots[dateStr];
 
-              const isSold = soldDates.includes(dateStr);
-              const isBooked = bookedDates.includes(dateStr);
               const isSelected =
                 selectedDate &&
-                dayjs(selectedDate).isSame(dateObj, "day");
+                dayjs(selectedDate).isSame(date, "day");
 
               return (
                 <button
-                  key={idx}
-                  disabled={isSold}
-                  onClick={() => setSelectedDate(dateObj)}
-                  className={`p-2 rounded text-sm
-                    ${isSold ? "bg-gray-200 text-gray-400" : ""}
-                    ${isBooked ? "bg-black text-white" : ""}
-                    ${isSelected ? "bg-[#0A7676] text-white" : ""}
+                  key={day}
+                  onClick={() =>
+                    isAvailable && setSelectedDate(date.toDate())
+                  }
+                  className={`h-8 w-8 rounded-full flex items-center justify-center relative
+                    ${
+                      isSelected
+                        ? "bg-[#0A7676] text-white"
+                        : "hover:bg-gray-100"
+                    }
+                    ${!isAvailable ? "opacity-30 cursor-not-allowed" : ""}
                   `}
                 >
                   {day}
+
+                  {isAvailable && !isSelected && (
+                    <span className="absolute bottom-1 w-1.5 h-1.5 bg-black rounded-full" />
+                  )}
                 </button>
               );
             })}

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Drawer, Rate, Input, Calendar } from "antd";
 import ResheduleDrawar from "./ResheduleDrawar";
 import { LocationIcon, MarkIcon, SvgICon1 } from "@/constant/svg.icon";
+import { X } from "lucide-react";
 
 const { TextArea } = Input;
 
@@ -155,9 +156,13 @@ const BookingList = () => {
                 </div>
 
                 <p className="font-medium text-[12px] flex gap-1 items-center">
-                  <SvgICon1></SvgICon1>{session.date} {session.time}
+                  <SvgICon1></SvgICon1>
+                  {session.date} {session.time}
                 </p>
-                <p className="text-gray-600 text-[12px] flex gap-1 items-center"><LocationIcon></LocationIcon>{session.location}</p>
+                <p className="text-gray-600 text-[12px] flex gap-1 items-center">
+                  <LocationIcon></LocationIcon>
+                  {session.location}
+                </p>
 
                 <div className="mt-4 flex gap-3">
                   {activeTab === "Upcoming" && (
@@ -201,26 +206,38 @@ const BookingList = () => {
       {/* 🔹 Review Drawer */}
       <Drawer
         placement="bottom"
-        height="45%"
+        height="50%"
         open={reviewOpen}
         onClose={closeReviewModal}
         closable={false}
+        getContainer={false}
         className="app-drawer"
+        style={{
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          maxWidth: "768px",
+          width: "100%",
+        }}
       >
         {selectedSession && (
           <div
-          className="p-4"
+            className="relative"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            <div
-              className="w-12  h-1.5 bg-gray-300 rounded-full mx-auto mb-4 cursor-pointer"
+            <button
               onClick={closeReviewModal}
-            />
+              className="absolute right-4 top-4 p-2 rounded-full hover:bg-gray-100"
+            >
+              <X size={20} />
+            </button>
 
             <h1 className="text-[20px] font-bold italic">Leave a review</h1>
-            <p className="text-[14px] text-[#0F243E]">Rate your session with Ann Smith.</p>
+            <p className="text-[14px] text-[#0F243E]">
+              Rate your session with Ann Smith.
+            </p>
 
             <div className="flex bg-white p-2 rounded-2xl mt-4 items-center gap-3 mb-4">
               <Image
@@ -231,30 +248,28 @@ const BookingList = () => {
                 className="rounded-2xl"
               />
               <div>
-                <h3 className="font-bold text-[14px]">{selectedSession.name}</h3>
-               
+                <h3 className="font-bold text-[14px]">
+                  {selectedSession.name}
+                </h3>
+
                 <div className="flex gap-2 mt-3">
-              <span className="px-3 py-1  bg-gray-100 text-[#7E8792] text-xs rounded-full font-medium">
-                Yoga
-              </span>
-              <span className="px-3 py-1 bg-gray-100  text-[#7E8792] text-xs rounded-full font-medium">
-                Stretching
-              </span>
-              <span className="px-3 py-1 bg-gray-100  text-[#7E8792] text-xs rounded-full font-medium">
-                Pilates
-              </span>
-              <span
-              
-                className="px-3 cursor-pointer py-1 bg-gray-100 text-xs rounded-full "
-              >
-                +7 More
-              </span>
-            </div>
+                  <span className="px-3 py-1  bg-gray-100 text-[#7E8792] text-xs rounded-full font-medium">
+                    Yoga
+                  </span>
+                  <span className="px-3 py-1 bg-gray-100  text-[#7E8792] text-xs rounded-full font-medium">
+                    Stretching
+                  </span>
+                  <span className="px-3 py-1 bg-gray-100  text-[#7E8792] text-xs rounded-full font-medium">
+                    Pilates
+                  </span>
+                  <span className="px-3 cursor-pointer py-1 bg-gray-100 text-xs rounded-full ">
+                    +7 More
+                  </span>
+                </div>
               </div>
             </div>
 
             <div className="mb-4">
-         
               <Rate value={rating} onChange={setRating} />
             </div>
 
@@ -285,8 +300,22 @@ const BookingList = () => {
         onClose={closeRescheduleConfirm}
         closable={false}
         className="app-drawer"
+        getContainer={false}
+        style={{
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          maxWidth: "768px",
+          width: "100%",
+        }}
       >
-        <div className="text-center p-4">
+        <div className="text-center relative">
+          <button
+            onClick={closeRescheduleConfirm}
+            className="absolute right-4 top-4 p-2 rounded-full hover:bg-gray-100"
+          >
+            <X size={20} />
+          </button>
           <div className="flex justify-center">
             <svg
               width="72"
