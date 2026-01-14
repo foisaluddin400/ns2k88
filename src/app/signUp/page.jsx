@@ -15,7 +15,9 @@ export default function SignUp() {
         <h1 className="text-center mt-4 text-xl font-semibold">
           Create your account
         </h1>
-        <p className="text-center mb-2">Join us and start your fitness journey</p>
+        <p className="text-center mb-2">
+          Join us and start your fitness journey
+        </p>
         <form className="space-y-6 ">
           <div>
             <label
@@ -107,7 +109,7 @@ export default function SignUp() {
             />
           </div>
 
-          <Link href={"/"}>
+          <Link href={"/signIn"}>
             <button
               type="submit"
               className="w-full py-2 mt-5 px-4 bg-primary text-white  rounded-xl  focus:outline-none focus:ring-2 focus:ring-primary"
@@ -118,29 +120,29 @@ export default function SignUp() {
         </form>
 
         <div className="flex items-center my-6">
-                  <div className="flex-grow border-t" />
-                  <span className="px-3 text-sm text-gray-500">Or continue with</span>
-                  <div className="flex-grow border-t" />
-                </div>
-        
-                {/* Social Login */}
-                <div className=" flex justify-center gap-5">
-                  {/* Google */}
-                  <button
-                    type="button"
-                    className="w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
-                  >
-                    <GoogleIcon></GoogleIcon>
-                  </button>
-        
-                  {/* Apple */}
-                  <button
-                    type="button"
-                    className=" w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
-                  >
-                    <FaApple className="text-black text-3xl" />
-                  </button>
-                </div>
+          <div className="flex-grow border-t" />
+          <span className="px-3 text-sm text-gray-500">Or continue with</span>
+          <div className="flex-grow border-t" />
+        </div>
+
+        {/* Social Login */}
+        <div className=" flex justify-center gap-5">
+          {/* Google */}
+          <button
+            type="button"
+            className="w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
+          >
+            <GoogleIcon></GoogleIcon>
+          </button>
+
+          {/* Apple */}
+          <button
+            type="button"
+            className=" w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
+          >
+            <FaApple className="text-black text-3xl" />
+          </button>
+        </div>
       </div>
     </div>
   );

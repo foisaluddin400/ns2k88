@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import backImage from '../../../../public/img/auth.png'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const Page = () => {
   const router = useRouter()
@@ -54,9 +55,9 @@ const Page = () => {
             Continue as Trainer
           </button>
 
-          <button className="w-full border border-white text-white py-3 rounded-full font-semibold text-lg hover:bg-white/10 transition">
+          <Link href={'/coach'}><button className="w-full border border-white text-white mt-4 py-3 rounded-full font-semibold text-lg hover:bg-white/10 transition">
             Explore first
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>

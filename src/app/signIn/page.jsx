@@ -9,16 +9,20 @@ import { useRouter } from "next/navigation";
 export default function SignIn() {
     const router = useRouter();
 
-  const handleRedirect = () => {
-    const storedRole = localStorage.getItem("role"); // "client" | "trainer"
+ const handleRedirect = () => {
+  if (typeof window === "undefined") return;
 
-    if (storedRole === "trainer") {
-      router.push("/trainer");
-    } else {
-      // default client
-      router.push("/client");
-    }
-  };
+  const storedRole = localStorage.getItem("role"); // "client" | "trainer" | null
+
+  if (storedRole === "trainer") {
+    router.push("/trainer");
+  } else if (storedRole === "client") {
+    router.push("/client");
+  } else {
+    
+    router.push("/auth/continue");
+  }
+};
 
   return (
     <div>
