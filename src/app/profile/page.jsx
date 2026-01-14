@@ -19,6 +19,13 @@ const Profile = () => {
     image:
       "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y", // replace with your image path or URL
   };
+ const handleLogout = () => {
+    // 🔥 remove role
+    localStorage.removeItem("role");
+
+    // 🔁 redirect to signIn
+    router.push("/signIn");
+  };
 
   // Sections data
   const accountSection = [
@@ -123,12 +130,12 @@ const Profile = () => {
       </div>
 
       {/* Log out Button */}
-     <Link href={'/signIn'}> <button
-        className="w-full my-5 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800"
-       
-      >
-        Log out
-      </button></Link>
+      <button
+      onClick={handleLogout}
+      className="w-full my-5 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800"
+    >
+      Log out
+    </button>
 
       {/* Social Links */}
       <div className="space-y-2">
