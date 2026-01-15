@@ -1,19 +1,29 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import { Plus, Trash2 } from "lucide-react"
-import { Navigate } from "@/components/Navigate"
+import React, { useState } from "react";
+import { Plus, Trash2 } from "lucide-react";
+import { Navigate } from "@/components/Navigate";
 
-const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+const DAYS = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 const TIME_OPTIONS = Array.from({ length: 48 }, (_, i) => {
-  const hours = Math.floor(i / 2)
-  const minutes = (i % 2) * 30
-  return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`
-})
+  const hours = Math.floor(i / 2);
+  const minutes = (i % 2) * 30;
+  return `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}`;
+});
 
 export default function AvailabilityForm() {
-  const [sessionDuration] = useState(60)
-  const [breakDuration, setBreakDuration] = useState(5)
+  const [sessionDuration] = useState(60);
+  const [breakDuration, setBreakDuration] = useState(5);
   const [availability, setAvailability] = useState({
     Monday: { enabled: false, timeSlots: [] },
     Tuesday: { enabled: false, timeSlots: [] },
@@ -28,7 +38,7 @@ export default function AvailabilityForm() {
     Friday: { enabled: false, timeSlots: [] },
     Saturday: { enabled: false, timeSlots: [] },
     Sunday: { enabled: false, timeSlots: [] },
-  })
+  });
 
   const toggleDay = (day) => {
     setAvailability((prev) => ({
@@ -37,8 +47,8 @@ export default function AvailabilityForm() {
         ...prev[day],
         enabled: !prev[day].enabled,
       },
-    }))
-  }
+    }));
+  };
 
   const updateTimeSlot = (day, index, field, value) => {
     setAvailability((prev) => ({
@@ -49,8 +59,8 @@ export default function AvailabilityForm() {
           i === index ? { ...slot, [field]: value } : slot
         ),
       },
-    }))
-  }
+    }));
+  };
 
   const addTimeSlot = (day) => {
     setAvailability((prev) => ({
@@ -59,8 +69,8 @@ export default function AvailabilityForm() {
         ...prev[day],
         timeSlots: [...prev[day].timeSlots, { from: "09:00", until: "17:00" }],
       },
-    }))
-  }
+    }));
+  };
 
   const removeTimeSlot = (day, index) => {
     setAvailability((prev) => ({
@@ -69,18 +79,18 @@ export default function AvailabilityForm() {
         ...prev[day],
         timeSlots: prev[day].timeSlots.filter((_, i) => i !== index),
       },
-    }))
-  }
+    }));
+  };
 
   return (
     <div className="-mt-20 ">
-        <Navigate></Navigate>
+      <Navigate></Navigate>
       <div className="">
         {/* Header */}
-         <div className="mb-8 text-center mt-7">
+        <div className="mb-8 text-center mt-7">
           <h1 className="text-xl font-bold text-gray-900">Your availability</h1>
           <p className="mt-2 text-gray-500">
-        Choose the days and times you are available for training sessions.
+            Choose the days and times you are available for training sessions.
           </p>
         </div>
 
@@ -97,7 +107,9 @@ export default function AvailabilityForm() {
 
         {/* Break Duration */}
         <div className="">
-          <h2 className="mb-4 text-sm  text-gray-900">Break between sessions</h2>
+          <h2 className="mb-4 text-sm  text-gray-900">
+            Break between sessions
+          </h2>
           <div className="flex gap-3 mb-8 rounded-lg ">
             <button
               onClick={() => setBreakDuration(0)}
@@ -127,11 +139,14 @@ export default function AvailabilityForm() {
           <h2 className="mb-3 text-sm  text-gray-900">Set your availability</h2>
 
           {DAYS.map((day) => (
-            <div key={day} className="mb-3 rounded-lg bg-white p-2">
+            <div
+              key={day}
+              className="mb-3 rounded-lg bg-white pt-2 pl-2 pb-[3px]"
+            >
               {/* Day Toggle */}
               <div className=" mb-2  flex items-center justify-between">
                 <h3 className="font-semibold text-gray-900">{day}</h3>
-                <label className="inline-flex relative items-center cursor-pointer">
+                <label className="inline-flex mt-[3px] mr-1 relative items-center cursor-pointer">
                   <input
                     type="checkbox"
                     checked={availability[day].enabled}
@@ -148,10 +163,14 @@ export default function AvailabilityForm() {
                 <div className="space-y-4 rounded-lg bg-gray-50 p-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs text-gray-600">From</label>
+                      <label className="block text-xs text-gray-600">
+                        From
+                      </label>
                       <select
                         value={availability[day].timeSlots[0]?.from || "12:00"}
-                        onChange={(e) => updateTimeSlot(day, 0, "from", e.target.value)}
+                        onChange={(e) =>
+                          updateTimeSlot(day, 0, "from", e.target.value)
+                        }
                         className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-700"
                       >
                         {TIME_OPTIONS.map((time) => (
@@ -162,10 +181,14 @@ export default function AvailabilityForm() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-600">Until</label>
+                      <label className="block text-xs text-gray-600">
+                        Until
+                      </label>
                       <select
                         value={availability[day].timeSlots[0]?.until || "12:00"}
-                        onChange={(e) => updateTimeSlot(day, 0, "until", e.target.value)}
+                        onChange={(e) =>
+                          updateTimeSlot(day, 0, "until", e.target.value)
+                        }
                         className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-700"
                       >
                         {TIME_OPTIONS.map((time) => (
@@ -218,7 +241,7 @@ export default function AvailabilityForm() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 function Clock(props) {
@@ -234,5 +257,5 @@ function Clock(props) {
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
-  )
+  );
 }

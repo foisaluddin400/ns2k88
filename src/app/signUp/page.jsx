@@ -30,7 +30,7 @@ export default function SignUp() {
               type="text"
               id="name"
               placeholder="Enter your name"
-              className="mt-1 block w-full p-2 border  bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border  bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -45,7 +45,7 @@ export default function SignUp() {
               type="tel"
               id="contact"
               placeholder="+88##########48"
-              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -60,7 +60,7 @@ export default function SignUp() {
               type="email"
               id="email"
               placeholder=".....@gmail.com"
-              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -75,7 +75,7 @@ export default function SignUp() {
               type="password"
               id="password"
               placeholder="New Password"
-              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -90,7 +90,7 @@ export default function SignUp() {
               type="password"
               id="confirm-password"
               placeholder="Enter your password"
-              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
@@ -105,7 +105,7 @@ export default function SignUp() {
               type="text"
               id="address"
               placeholder="Dhaka, Bangladesh"
-              className="mt-1 block w-full p-2 border bg-white rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 

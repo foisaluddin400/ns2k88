@@ -44,7 +44,7 @@ export default function SignIn() {
             </label>
             <input
               type="email"
-              className="mt-1 w-full p-2 border bg-whiterounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-white rounded-lg"
+              className="mt-1 w-full p-2 border bg-whiterounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-white rounded-xl"
               placeholder="Email"
             />
           </div>
@@ -57,7 +57,7 @@ export default function SignIn() {
             </div>
             <input
               type="password"
-              className="mt-1 w-full p-2 border bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="Password"
             />
           </div>
@@ -73,7 +73,7 @@ export default function SignIn() {
         <button
       type="button"
       onClick={handleRedirect}
-      className="w-full py-2 bg-primary text-white mt-4 rounded"
+      className="w-full py-2 bg-primary text-white mt-4 rounded-xl"
     >
       SIGN IN
     </button>
