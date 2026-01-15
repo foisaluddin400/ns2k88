@@ -25,6 +25,7 @@ const TopBar = () => {
   </button>;
   return (
     <div className="flex justify-between items-center">
+      
       <button onClick={handleRedirect}>
         {" "}
         <svg

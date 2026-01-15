@@ -91,7 +91,7 @@ const isChatWithId =
   return (
     <>
       <div className="flex flex-col bg-[#F7F7F7] min-h-screen max-w-3xl m-auto">
-        <div className="fixed z-10 px-3 bg-[#F7F7F7] top-0 w-[48rem]">
+        <div className="fixed z-10 px-3 bg-[#F7F7F7] top-0 container">
           {!hideNavbarNav && (
             <div className="py-4 pt-4 ">
               <TopBar></TopBar>
