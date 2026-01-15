@@ -51,10 +51,11 @@ const Step4Certification = ({ onNext }) => {
             setCertFile(file);
             return false;
           }}
+          style={{width:'100%'}}
           accept=".pdf,.jpg,.jpeg,.png"
           maxCount={1}
         >
-          <div className="border-2 border-dashed border-teal-500 rounded-xl p-8 text-center cursor-pointer hover:bg-gray-50">
+          <div className="border-2 border-dashed border-primary rounded-xl p-8 text-center cursor-pointer hover:bg-gray-50">
             <UploadCloud className="mx-auto mb-2 text-gray-400" />
             <p className="text-sm font-medium">
               Tap to upload or drag files here

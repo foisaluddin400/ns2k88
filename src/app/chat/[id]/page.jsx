@@ -71,7 +71,7 @@ const ChatDetailsPage = () => {
   return (
     <div className="min-h-[90vh] flex flex-col -mb-20 ">
       {/* Header */}
-      <div className="flex justify-between -mt-20 py-7 items-center relative">
+      <div className="flex justify-between -mt-24 py-7 items-center relative">
         <div className="flex items-center gap-3">
           <button
             onClick={() => router.back()}
