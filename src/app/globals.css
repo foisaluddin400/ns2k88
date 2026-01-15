@@ -58,3 +58,13 @@ li {
   --rdp-accent-background-color: #f0f0f0; /* Change the accent background color. */
   /* Add more CSS variables here. */
 }
+
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

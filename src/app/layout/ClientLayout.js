@@ -8,24 +8,28 @@ import TopBar from "@/components/shared/TopBar";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
-const isHome = pathname === "/";
-const isAuthRoute = pathname.startsWith("/auth");
+  const isHome = pathname === "/";
+  const isAuthRoute = pathname.startsWith("/auth");
+const isChatWithId =
+  pathname.startsWith("/chat/") && pathname !== "/chat";
 
-const noPadding = isHome || isAuthRoute;
-
+  const noPadding = isHome || isAuthRoute;
 
   const hideNavbarFooter =
-  pathname === "/" ||
+    pathname === "/" ||
     pathname === "/signIn" ||
     pathname === "/auth" ||
     pathname === "/book" ||
     pathname === "/imprint" ||
     pathname === "/privacy" ||
     pathname === "/terms" ||
-   pathname.startsWith("/chat")||
+    isChatWithId ||
     pathname === "/favorite_trainer" ||
-   
     pathname === "/book-proccess" ||
+    pathname === "/trainer/signUp" ||
+    pathname === "/trainer/priceSetup" ||
+    pathname === "/trainer/availability" ||
+    pathname === "/trainer/activePayment" ||
     pathname === "/codeConduct" ||
     pathname === "/notification" ||
     pathname === "/push_notification" ||
@@ -48,14 +52,18 @@ const noPadding = isHome || isAuthRoute;
     pathname === "/signUp/accountverify";
 
   const hideNavbarNav =
-  pathname === "/" ||
+    pathname === "/" ||
     pathname === "/signIn" ||
     pathname === "/book-proccess" ||
     pathname === "/favorite_trainer" ||
     pathname === "/coach/coachDetails" ||
     pathname === "/auth" ||
+    pathname === "/trainer/priceSetup" ||
+    pathname === "/trainer/availability" ||
+    pathname === "/trainer/activePayment" ||
     pathname === "/terms" ||
-    pathname.startsWith("/chat")||
+    pathname === "/trainer/signUp" ||
+     isChatWithId ||
     pathname === "/chat" ||
     pathname === "/codeConduct" ||
     pathname === "/password" ||
@@ -91,12 +99,12 @@ const noPadding = isHome || isAuthRoute;
           )}
         </div>
         <div
-  className={`text-black flex-grow mt-20 mb-20 ${
-    noPadding ? "" : "px-3"
-  }`}
->
-  {children}
-</div>
+          className={`text-black flex-grow mt-20 mb-20 ${
+            noPadding ? "" : "px-3"
+          }`}
+        >
+          {children}
+        </div>
 
         <div className=" ">
           {!hideNavbarFooter && (

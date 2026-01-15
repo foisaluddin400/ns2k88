@@ -216,9 +216,7 @@ const TranCalendarWithSlots = () => {
         </div>
       )}
 
-      {/* ===== DRAWERS ===== */}
-
-      {/* 1. LONG UNAVAILABILITY DRAWER */}
+      
       <Drawer
         placement="bottom"
         height={340}

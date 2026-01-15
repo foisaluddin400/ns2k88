@@ -84,44 +84,9 @@ const coaches = [
   // Add more or set to [] to see empty state
 ];
 const TrainCoach = () => {
-  const [activeTab, setActiveTab] = useState("All coaches");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [activeSpecTab, setActiveSpecTab] = useState("Fitness");
 
-  const specifications = {
-    Fitness: [
-      "Weight Loss",
-      "Strength Training",
-      "CrossFit",
-      "Yoga",
-      "HIIT",
-      "Pilates",
-      "Cardio",
-      "Functional Training",
-    ],
-    Kampfsport: [
-      "Boxing",
-      "Muay Thai",
-      "Brazilian Jiu-Jitsu",
-      "MMA",
-      "Kickboxing",
-      "Karate",
-      "Taekwondo",
-      "Self Defense",
-    ],
-    Ernährung: [
-      "Nutritional Advice",
-      "Meal Planning",
-      "Weight Gain Diet",
-      "Fat Loss Nutrition",
-      "Muscle Building Diet",
-      "Vegan Nutrition",
-      "Sports Nutrition",
-      "Gut Health",
-    ],
-  };
 
-  const currentSpecs = specifications[activeSpecTab];
+
   return (
     <>
       {/* Main Page Content */}

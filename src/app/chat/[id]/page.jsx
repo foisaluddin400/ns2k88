@@ -69,7 +69,7 @@ const ChatDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-[91vh] flex flex-col -mb-20">
+    <div className="min-h-[90vh] flex flex-col -mb-20 ">
       {/* Header */}
       <div className="flex justify-between -mt-20 py-7 items-center relative">
         <div className="flex items-center gap-3">
@@ -131,7 +131,7 @@ const ChatDetailsPage = () => {
       </div>
 
       {/* Input */}
-      <div className="p-3 bg-white flex gap-2">
+      <div className="p-3 -mx-3 bg-white flex gap-2">
         <input type="text" placeholder="Type a message..." className="flex-1 px-4 py-2 outline-none" />
         <button>
           <SendIcon />

@@ -68,7 +68,7 @@ export const Navbar = () => {
       ),
     },
     {
-      label: "Coach",
+      label: "Client",
       path: "/trainer/coach",
       icon: (active) => (
         <ClientIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
@@ -90,7 +90,7 @@ export const Navbar = () => {
     },
     {
       label: "Profile",
-      path: "/profile",
+      path: "/trainer/profile",
       icon: (active) => (
         <UserIcon color={active ? "white" : "#A3A9B0"} className="w-7 h-7" />
       ),

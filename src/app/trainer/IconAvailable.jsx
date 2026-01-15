@@ -1,0 +1,16 @@
+import React from 'react'
+
+const IconAvailable = () => {
+  return (
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.66602 1.66602V4.16602" stroke="#0A7676" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.334 1.66602V4.16602" stroke="#0A7676" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.3333 2.91602C16.1083 3.06602 17.5 4.12435 17.5 8.04102V13.191C17.5 16.6243 16.6667 18.341 12.5 18.341H7.5C3.33333 18.341 2.5 16.6243 2.5 13.191V8.04102C2.5 4.12435 3.89167 3.07435 6.66667 2.91602H13.3333Z" stroke="#0A7676" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.2923 14.666H2.70898" stroke="#0A7676" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+  )
+}
+
+export default IconAvailable

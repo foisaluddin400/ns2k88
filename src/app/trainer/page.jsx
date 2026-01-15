@@ -1,6 +1,9 @@
 import TrainUserIcon from "@/components/trainerIcon/TrainUserIcon";
 import { CalenderIcon } from "@/constant/svg.icon";
 import React from "react";
+import CalendarSection from "./TrainerHomeCalender";
+import NewActivity from "./NewActivity";
+import CompleteYourAccount from "./CompleteYourAccount";
 
 const page = () => {
   return (
@@ -18,6 +21,9 @@ const page = () => {
           </p>
         </div>
       </div>
+      <CalendarSection></CalendarSection>
+      <NewActivity></NewActivity>
+      <CompleteYourAccount></CompleteYourAccount>
     </div>
   );
 };
