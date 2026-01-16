@@ -61,7 +61,7 @@ const Hero = () => {
   return (
     <div className=" mt-3 font-style">
       <div>
-        <h1 className="text-2xl font-bold italic ">Hello, Alex!</h1>
+        <h1 className="text-2xl font-style1 font-extrabold text-gray-800 ">Hello, Alex!</h1>
       </div>
 
       <div className="flex items-center gap-3 bg-secondary p-3 mt-6 rounded-2xl">
@@ -78,7 +78,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <h2 className="text-xl italic font-semibold text-[#7E8792] mb-2 mt-7 ">
+      <h2 className=" italic font-style1 font-extrabold text-[#7E8792] mb-2 mt-7 ">
         Upcoming sessions
       </h2>
 
@@ -87,8 +87,8 @@ const Hero = () => {
           type: "slide",
           perPage: 2,
           perMove: 1,
-          gap: "1.25rem",
-          padding: "0.5rem",
+          gap: "0.5rem",
+          padding: "0.2rem",
           pagination: false,
           arrows: false,
           drag: true,
@@ -96,7 +96,7 @@ const Hero = () => {
           rewind: true,
           focus: 0,
           breakpoints: {
-            640: { perPage: 1.2 },
+            640: { perPage: 1 },
             768: { perPage: 1.8 },
             1024: { perPage: 2 },
             1280: { perPage: 2 },
@@ -124,7 +124,7 @@ const Hero = () => {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className=" text-[14px] font-bold flex items-center gap-2 text-gray-900 truncate">
+                    <h3 className=" text-[14px] font-style1 font-extrabold flex items-center gap-2 text-gray-900 truncate">
                       {session.name}, {session.age} <Svg></Svg>
                     </h3>
                     <button className="bg-[#E2F8F8]  text-primary text-sm px-2 py-1 rounded-full transition whitespace-nowrap">
@@ -158,9 +158,9 @@ const Hero = () => {
       </Splide>
 
       <div className="space-y-4 mt-7">
-        <h2 className="text-xl italic font-semibold text-[#7E8792]  mb-2 mt-7 ">
-          Latest activities
-        </h2>
+         <h2 className=" italic font-style1 font-extrabold text-[#7E8792] mt-7 ">
+        Latest activities
+      </h2>
         <div className="flex items-center gap-3 bg-white border p-3 rounded-3xl">
           <div className="bg-accent p-4 rounded-2xl">
             <IoIosCheckmarkCircleOutline className="w-6 h-6" />
@@ -176,7 +176,7 @@ const Hero = () => {
             <MessageIcon className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="pb-2">Session with James K, completed</h1>
+            <h1 className="pb-2">Session with James K</h1>
             <p className="text-[#A3A9B0] text-sm">YESTERDAY, 6:30 AM</p>
           </div>
         </div>

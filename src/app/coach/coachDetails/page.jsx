@@ -19,6 +19,7 @@ const page = () => {
 
   return (
     <div className=" -mt-20">
+      
       <div className="flex justify-between items-center">
         <Navigate ></Navigate>
         <div className="flex gap-2">
@@ -30,7 +31,8 @@ const page = () => {
           </div>
         </div>
       </div>
-      <Splide
+     <div className="-mx-3">
+       <Splide
         options={{
           type: "loop",
           perPage: 1,
@@ -52,7 +54,7 @@ const page = () => {
       >
         {images.map((img, idx) => (
           <SplideSlide key={idx}>
-            <div className="w-full h-[30vh] rounded overflow-hidden shadow-md">
+            <div className="w-full  h-[30vh]  overflow-hidden shadow-md">
               <Image
                 src={img}
                 alt={`slider-image-${idx}`}
@@ -62,6 +64,7 @@ const page = () => {
           </SplideSlide>
         ))}
       </Splide>
+     </div>
       <DetailsInfo></DetailsInfo>
       <Review></Review>
     </div>

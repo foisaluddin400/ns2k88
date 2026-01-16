@@ -1,117 +1,141 @@
-'use client'
-import Image from "next/image";
+"use client";
 import Link from "next/link";
-import logo from "../../../public/img/logo5.png";
-import { FaGoogle, FaApple } from "react-icons/fa";
-import GoogleIcon from "../signUp/GoogleIcon";
 import { useRouter } from "next/navigation";
+import { FaArrowLeft, FaApple } from "react-icons/fa6";
+import GoogleIcon from "../signUp/GoogleIcon";
+import IconNavigate from "@/components/IconNavigate";
+import IconEmail from "./IconEmail";
+import IconPassWord from "./IconPassWord";
+
+
 
 export default function SignIn() {
-    const router = useRouter();
+  const router = useRouter();
 
- const handleRedirect = () => {
-  if (typeof window === "undefined") return;
+  const handleRedirect = () => {
+    if (typeof window === "undefined") return;
 
-  const storedRole = localStorage.getItem("role"); // "client" | "trainer" | null
+    const storedRole = localStorage.getItem("role");
 
-  if (storedRole === "trainer") {
-    router.push("/trainer");
-  } else if (storedRole === "client") {
-    router.push("/client");
-  } else {
-    
-    router.push("/auth/continue");
-  }
-};
+    if (storedRole === "trainer") {
+      router.push("/trainer");
+    } else if (storedRole === "client") {
+      router.push("/client");
+    } else {
+      router.push("/auth/continue");
+    }
+  };
 
   return (
-    <div>
-      <div className="">
-        {/* Logo */}
-        <div className="flex justify-center mt-11">
-          <Image src={logo} alt="logo" width={100} />
-        </div>
+    <div className="h-screen -mt-20 -mb-20 overflow-hidden flex flex-col ">
 
-        <h2 className="text-2xl text-center my-11 font-bold text-gray-800">
-          Great to have you back!
+      {/* 🔝 Top Bar */}
+      <div className="relative flex items-center justify-center mt-4">
+        <button
+          onClick={() => router.back()}
+          className="absolute left-0 text-gray-600 border bg-white w-[40px] h-[40px] flex justify-center items-center rounded-full"
+        >
+          <FaArrowLeft />
+        </button>
+
+        {/* Center Logo */}
+        <IconNavigate />
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-grow flex flex-col justify-center">
+        <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">
+          Welcome back!
+        </h2>
+
+        <h2 className="text-sm text-center text-gray-500 mb-6">
+          Let's get started!
         </h2>
 
         {/* Form */}
         <form className="space-y-6">
+          {/* Email */}
           <div>
             <label className="block text-sm font-semibold text-gray-700">
-              User Name or Email
+              Email
             </label>
-            <input
-              type="email"
-              className="mt-1 w-full p-2 border bg-whiterounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-white rounded-xl"
-              placeholder="Email"
-            />
+
+            <div className="relative mt-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                <IconEmail />
+              </span>
+              <input
+                type="email"
+                className="w-full p-3 pl-10 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Enter your email address"
+              />
+            </div>
           </div>
 
+          {/* Password */}
           <div>
-            <div className="flex justify-between">
-              <label className="block text-sm font-semibold text-gray-700">
-                Password
-              </label>
+            <label className="block text-sm font-semibold text-gray-700">
+              Password
+            </label>
+
+            <div className="relative mt-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                <IconPassWord />
+              </span>
+              <input
+                type="password"
+                className="w-full p-3 pl-10 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Enter your password"
+              />
             </div>
-            <input
-              type="password"
-              className="mt-1 w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Password"
-            />
           </div>
+
           <div className="text-end">
             <Link
               href="/signIn/forgot"
-              className="text-sm  text-primary hover:underline"
+              className="text-sm text-primary hover:underline"
             >
               Forgot Your Password?
             </Link>
           </div>
 
-        <button
-      type="button"
-      onClick={handleRedirect}
-      className="w-full py-2 bg-primary text-white mt-4 rounded-xl"
-    >
-      SIGN IN
-    </button>
+          <button
+            type="button"
+            onClick={handleRedirect}
+            className="w-full py-3 bg-primary text-white rounded-xl"
+          >
+            SIGN IN
+          </button>
         </form>
 
         {/* Divider */}
         <div className="flex items-center my-6">
           <div className="flex-grow border-t" />
-          <span className="px-3 text-sm text-gray-500">Or continue with</span>
+          <span className="px-3 text-sm font-bold italic">
+            Or continue with
+          </span>
           <div className="flex-grow border-t" />
         </div>
 
         {/* Social Login */}
-        <div className=" flex justify-center gap-5">
-          {/* Google */}
-          <button
-            type="button"
-            className="w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
-          >
-            <GoogleIcon></GoogleIcon>
+        <div className="flex justify-center gap-5">
+          <button className="w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-gray-50">
+            <GoogleIcon />
           </button>
 
-          {/* Apple */}
-          <button
-            type="button"
-            className=" w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
-          >
+          <button className="w-[60px] h-[60px] rounded-full flex items-center justify-center hover:bg-gray-50">
             <FaApple className="text-black text-3xl" />
           </button>
         </div>
-
-        <p className="text-sm mt-11 text-gray-600 text-center">
-          New here? <br />
-          <Link href="/" className="text-primary hover:underline">
-            Register Now
-          </Link>
-        </p>
       </div>
+
+      {/* 🔻 Bottom Register */}
+      <p className="text-sm mb-6 text-gray-600 text-center">
+        New here? <br />
+        <Link href="/" className="text-primary hover:underline ">
+          Register Now
+        </Link>
+      </p>
     </div>
   );
 }

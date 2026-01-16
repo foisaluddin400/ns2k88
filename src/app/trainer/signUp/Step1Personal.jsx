@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { savePersonalInfo } from "@/redux/features/trainerRegisterSlice";
 import CameraImage from "./CameraImage";
+import Link from "next/link";
 
 const Step1Personal = ({ onNext }) => {
   const dispatch = useDispatch();
@@ -35,7 +36,9 @@ const Step1Personal = ({ onNext }) => {
   return (
     <div className="space-y-4">
       <div className="text-center">
-        <h2 className="text-[20px] font-bold italic">Personal Information</h2>
+         <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">
+        Personal information
+      </h2>
         <p className="text-[14px] text-[#7E8792]">
           Enter your personal information
         </p>
@@ -136,6 +139,13 @@ const Step1Personal = ({ onNext }) => {
       >
         Continue
       </button>
+
+         <p className="text-sm mb-6 mt-auto text-gray-600 text-center">
+        Already have an account? <br />
+        <Link href="/signIn" className="text-primary hover:underline">
+          Log in
+        </Link>
+      </p>
     </div>
   );
 };

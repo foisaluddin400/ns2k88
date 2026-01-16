@@ -1,149 +1,138 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../../../public/img/logo5.png";
-import { FaApple, FaGoogle } from "react-icons/fa6";
+import { FaApple, FaArrowLeft } from "react-icons/fa6";
 import GoogleIcon from "./GoogleIcon";
-export default function SignUp() {
-  return (
-    <div>
-      <div>
-        <div className="flex justify-center mt-11">
-          <Image src={logo} alt="logo" width={100} />
-        </div>
+import IconEmail from "../signIn/IconEmail";
+import IconPassWord from "../signIn/IconPassWord";
+import IconNavigate from "@/components/IconNavigate";
+import { useRouter } from "next/navigation";
 
-        <h1 className="text-center mt-4 text-xl font-semibold">
-          Create your account
-        </h1>
-        <p className="text-center mb-2">
-          Join us and start your fitness journey
-        </p>
-        <form className="space-y-6 ">
+export default function SignUp() {
+  const router = useRouter();
+  return (
+    <div className="h-screen -mt-20 -mb-20 overflow-hidden flex flex-col">
+      <div className="relative flex items-center justify-center mt-4">
+        <button
+          onClick={() => router.back()}
+          className="absolute left-0 text-gray-600 border bg-white w-[40px] h-[40px] flex justify-center items-center rounded-full"
+        >
+          <FaArrowLeft />
+        </button>
+
+        {/* Center Logo */}
+        <IconNavigate />
+      </div>
+
+      <div className="flex-grow flex flex-col justify-center">
+        <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">
+        Create your account
+        </h2>
+
+        <h2 className="text-sm text-center text-gray-500 mb-6">
+         Join us and start your fitness journey.
+        </h2>
+
+        <form className="space-y-3">
+          {/* Full Name */}
           <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label className="block text-sm font-medium text-gray-700">
               Full Name
             </label>
             <input
               type="text"
-              id="name"
               placeholder="Enter your name"
-              className="mt-1 block w-full p-2 border  bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+              className="mt-1 block w-full p-3 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
+          {/* Email */}
           <div>
-            <label
-              htmlFor="contact"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Contact Number
-            </label>
-            <input
-              type="tel"
-              id="contact"
-              placeholder="+88##########48"
-              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label className="block text-sm font-medium text-gray-700">
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              placeholder=".....@gmail.com"
-              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-            />
+            <div className="relative mt-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                <IconEmail />
+              </span>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="block w-full p-3 pl-10 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
           </div>
 
+          {/* New Password */}
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label className="block text-sm font-medium text-gray-700">
               New Password
             </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="New Password"
-              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-            />
+            <div className="relative mt-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                <IconPassWord />
+              </span>
+              <input
+                type="password"
+                placeholder="New Password"
+                className="block w-full p-3 pl-10 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
           </div>
 
+          {/* Confirm Password */}
           <div>
-            <label
-              htmlFor="confirm-password"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label className="block text-sm font-medium text-gray-700">
               Confirm Password
             </label>
-            <input
-              type="password"
-              id="confirm-password"
-              placeholder="Enter your password"
-              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-            />
+            <div className="relative mt-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                <IconPassWord />
+              </span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="block w-full p-3 pl-10 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
           </div>
 
-          <div>
-            <label
-              htmlFor="address"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              placeholder="Dhaka, Bangladesh"
-              className="mt-1 block w-full p-2 border bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-          </div>
-
-          <Link href={"/signIn"}>
+          <Link href="/signIn">
             <button
               type="submit"
-              className="w-full py-2 mt-5 px-4 bg-primary text-white  rounded-xl  focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full py-2 mt-5 bg-primary text-white rounded-xl"
             >
               Register
             </button>
           </Link>
         </form>
-
+ <h2 className="text-sm text-center mt-3 text-gray-500 mb-6">
+     By registering you agree to our Terms of Use and Privacy Policy.
+        </h2>
         <div className="flex items-center my-6">
           <div className="flex-grow border-t" />
-          <span className="px-3 text-sm text-gray-500">Or continue with</span>
+          <span className="px-3 text-sm italic font-bold">Or continue with</span>
           <div className="flex-grow border-t" />
         </div>
 
-        {/* Social Login */}
-        <div className=" flex justify-center gap-5">
-          {/* Google */}
-          <button
-            type="button"
-            className="w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
-          >
-            <GoogleIcon></GoogleIcon>
+        <div className="flex justify-center gap-5">
+          <button className="w-[60px] h-[60px] rounded-full flex items-center justify-center  hover:bg-gray-50">
+            <GoogleIcon />
           </button>
 
-          {/* Apple */}
-          <button
-            type="button"
-            className=" w-[60px] h-[60px] rounded-full flex items-center justify-center gap-3 bg-gray-200 py-2 hover:bg-gray-50"
-          >
+          <button className="w-[60px] h-[60px] rounded-full flex items-center justify-center  hover:bg-gray-50">
             <FaApple className="text-black text-3xl" />
           </button>
         </div>
       </div>
+      <p className="text-sm mb-6 mt-auto text-gray-600 text-center">
+        Already have an account? <br />
+        <Link href="/signIn" className="text-primary hover:underline">
+          Log in
+        </Link>
+      </p>
     </div>
   );
 }

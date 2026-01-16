@@ -17,7 +17,7 @@ const coaches = [
     name: "Ann Smith",
     age: 26,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin ',
+    location: "B. Berlin ",
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -28,7 +28,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin or ',
+    location: "B. Berlin or ",
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -39,7 +39,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin ',
+    location: "B. Berlin ",
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -50,7 +50,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin ',
+    location: "B. Berlin ",
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -61,7 +61,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin',
+    location: "B. Berlin",
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -72,7 +72,7 @@ const coaches = [
     name: "Joyce Daniel",
     age: 28,
     specialties: ["Yoga", "Stretching"],
-    location: 'B. Berlin ',
+    location: "B. Berlin ",
     price: "€32.00 /hr",
     rating: 4.9,
     image:
@@ -123,7 +123,9 @@ const CoachPage = () => {
     <>
       {/* Main Page Content */}
       <div className=" bg-gray-50 ">
-        <h1 className="text-xl font-semibold mt-4 mb-2 italic">Who are you looking for today?</h1>
+        <h1 className="text-xl font-semibold mt-4 mb-2 italic">
+          Who are you looking for today?
+        </h1>
         {/* Search + Filter */}
         <div className="flex sticky top-5 z-40 w-full items-center gap-4 pt-1 pb-4 bg-gray-50">
           <div className="w-full">
@@ -136,7 +138,10 @@ const CoachPage = () => {
               />
             </div>
           </div>
-          <button className="bg-gray-100 w-[45px] h-[45px] rounded-full flex justify-center items-center" onClick={() => setIsFilterOpen(true)}>
+          <button
+            className="bg-gray-100 w-[45px] h-[45px] rounded-full flex justify-center items-center"
+            onClick={() => setIsFilterOpen(true)}
+          >
             <FilterIcon />
           </button>
         </div>
@@ -188,7 +193,10 @@ const CoachPage = () => {
                           </h3>
                           <div className="flex items-center gap-2 text-sm text-gray-600  mt-1">
                             {coach.specialties.map((s, i) => (
-                              <span className="bg-[#F7F7F7] text-[10.8px] rounded-full px-2" key={i}>
+                              <span
+                                className="bg-[#F7F7F7] text-[10.8px] rounded-full px-2"
+                                key={i}
+                              >
                                 {s}
                                 {i < coach.specialties.length - 1 && (
                                   <span className="mx-1  text-gray-400">•</span>
@@ -205,7 +213,9 @@ const CoachPage = () => {
                       </div>
                       <div className="flex items-center justify-between mt-3 text-sm">
                         <div className="text-gray-500 flex text-[12px] items-center gap-2">
-                          <span className="text-gray-400"><LocationIcon></LocationIcon></span>{" "}
+                          <span className="text-gray-400">
+                            <LocationIcon></LocationIcon>
+                          </span>{" "}
                           {coach.location}
                         </div>
                         <div className="flex items-center gap-3"></div>
@@ -229,19 +239,17 @@ const CoachPage = () => {
           onClose={() => setIsFilterOpen(false)}
           closable={false}
           height="90%"
-            getContainer={false}
-  style={{
-    position: "absolute",
-    left: "50%",                 // ✅ ADD
-    transform: "translateX(-50%)", // ✅ ADD
-    maxWidth: "768px",            // 3xl
-    width: "100%",
-    
-  }}
-       
+          getContainer={false}
+          style={{
+            position: "absolute",
+            left: "50%", // ✅ ADD
+            transform: "translateX(-50%)", // ✅ ADD
+            maxWidth: "768px", // 3xl
+            width: "100%",
+          }}
         >
           {/* Drag Handle */}
-        
+
           {/* Header */}
           <div className="flex items-center justify-between   border-b border-gray-200">
             <h2 className="text-xl font-bold text-gray-900">Filter</h2>

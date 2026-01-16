@@ -8,6 +8,12 @@ const style = localFont({
   variable: "--style-display",
 });
 
+
+const style1 = localFont({
+  src: "../../src/font/Montserrat-Italic-VariableFont_wght.ttf",
+  variable: "--style1-display",
+});
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -28,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="product">
       <body
-        className={`${geistSans.variable} bg-black ${geistMono.variable} ${style.variable} antialiased`}
+        className={`${geistSans.variable} bg-black ${geistMono.variable} ${style.variable} ${style1.variable} antialiased`}
       >
         <ReduxProvider>
           <div className="font-style ">

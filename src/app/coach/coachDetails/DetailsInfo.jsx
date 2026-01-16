@@ -252,7 +252,7 @@ export default function DetailsInfo() {
                   key={idx}
                   className={`text-center ${
                     selectedDate === dateRange[idx]
-                      ? "border border-secondary bg-[#0A7676] rounded-md p-1 text-white"
+                      ? "border border-secondary bg-[#0A767640] rounded-md p-1 text-blacke"
                       : "bg-gray-50  rounded-md"
                   }`}
                 >
@@ -309,7 +309,7 @@ export default function DetailsInfo() {
         {/* Book Now Button */}
         <Link href={"/book"}>
           <button className="w-full mt-8 mb-8 bg-primary text-white font-bold py-3 rounded-2xl italic transition-colors">
-            Book now
+          Preise und Pakete
           </button>
         </Link>
       </div>
