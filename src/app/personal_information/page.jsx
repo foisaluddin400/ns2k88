@@ -2,7 +2,10 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Navigate } from "@/components/Navigate"
+
+import { FaArrowLeft } from "react-icons/fa6"
+import IconNavigate from "@/components/IconNavigate"
+import { useRouter } from "next/navigation"
 
 const defaultProfile = {
   fullName: "Alex Doe",
@@ -15,6 +18,7 @@ const defaultProfile = {
 }
 
 export default function ProfileCard() {
+  const router = useRouter()
   const [isEditing, setIsEditing] = useState(false)
   const [profile, setProfile] = useState(defaultProfile)
   const [editData, setEditData] = useState(defaultProfile)
@@ -36,10 +40,21 @@ export default function ProfileCard() {
   return (
     <div className="-mt-20 -mb-20">
       {/* Header */}
-      <Navigate></Navigate>
-      <div className=" ">
+       <div className=" flex items-center gap-4 h-[60px] mt-4">
+        {/* Back Button */}
+        <button
+          onClick={() => router.back()}
+          className=" left-0 text-gray-600 border bg-white w-[40px] h-[40px] flex justify-center items-center rounded-full"
+        >
+          <FaArrowLeft />
+        </button>
+
+        {/* Center Logo */}
+        <h1 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Personal Information </h1>
+      </div>
+      <div className="mt-6 ">
         <div className="flex flex-col items-center gap-6">
-          <div className="relative w-24 h-24  ">
+          <div className="relative w-28 h-28  ">
             <img
               src="https://i.pravatar.cc/150?img=33"
               alt="Profile"
@@ -47,82 +62,69 @@ export default function ProfileCard() {
               className="object-cover rounded-3xl"
             />
           </div>
-          <div className="text-center">
-            {!isEditing ? (
-              <>
-                <h1 className="text-3xl font-bold">{profile.fullName}</h1>
-                <p className="text-sm text-gray-500">
-                  Profile Information
-                </p>
-              </>
-            ) : (
-              <p className="text-sm text-gray-500">
-                Edit your information
-              </p>
-            )}
-          </div>
+         
         </div>
       </div>
 
       {/* Content */}
-      <div className=" py-8 space-y-6">
+      <div className=" py-8 space-y-4">
         {/* Full Name */}
-        <div>
-          <label className="text-xs font-semibold uppercase text-gray-500">
+        <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs uppercase ">
             Full name
           </label>
           {isEditing ? (
             <input
-              className="w-full mt-2 p-3 border rounded-lg"
+              className="w-full mt-2 p-3 "
               value={editData.fullName}
               onChange={(e) =>
                 handleEditChange("fullName", e.target.value)
               }
             />
           ) : (
-            <p className="profile-box">{profile.fullName}</p>
+            <p className="profile-box font-style1 font-extrabold">{profile.fullName}</p>
           )}
         </div>
 
         {/* Address */}
-        <div>
-          <label className="text-xs font-semibold uppercase text-gray-500">
+        <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs  uppercase ">
             Address
           </label>
           {isEditing ? (
             <input
-              className="w-full mt-2 p-3 border rounded-lg"
+              className="w-full mt-2 p-3"
               value={editData.address}
               onChange={(e) =>
                 handleEditChange("address", e.target.value)
               }
             />
           ) : (
-            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.address}</p>
+            <p className="profile-box font-style1 font-extrabold ">{profile.address}</p>
           )}
         </div>
 
         {/* City & Postal */}
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <label className="text-xs font-semibold uppercase text-gray-500">
+      
+             <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs  uppercase ">
               City
             </label>
             {isEditing ? (
               <input
-                className="w-full mt-2 p-3 border rounded-lg"
+                className="w-full mt-2 p-3 "
                 value={editData.city}
                 onChange={(e) =>
                   handleEditChange("city", e.target.value)
                 }
               />
             ) : (
-              <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.city}</p>
+              <p className="profile-box font-style1 font-extrabold">{profile.city}</p>
             )}
           </div>
 
-          <div>
-            <label className="text-xs font-semibold uppercase text-gray-500">
+           <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs  uppercase ">
               Postal code
             </label>
             {isEditing ? (
@@ -134,32 +136,32 @@ export default function ProfileCard() {
                 }
               />
             ) : (
-              <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.postalCode}</p>
+              <p className="profile-box font-style1 font-extrabold">{profile.postalCode}</p>
             )}
           </div>
-        </div>
+   
 
         {/* Country */}
-        <div>
-          <label className="text-xs font-semibold uppercase text-gray-500">
+          <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs  uppercase ">
             Country
           </label>
           {isEditing ? (
             <input
-              className="w-full mt-2 p-3 border rounded-lg"
+              className="w-full mt-2 p-3 "
               value={editData.country}
               onChange={(e) =>
                 handleEditChange("country", e.target.value)
               }
             />
           ) : (
-            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.country}</p>
+            <p className="profile-box font-style1 font-extrabold">{profile.country}</p>
           )}
         </div>
 
         {/* Email */}
-        <div>
-          <label className="text-xs font-semibold uppercase text-gray-500">
+         <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs  uppercase ">
             Email
           </label>
           {isEditing ? (
@@ -172,13 +174,13 @@ export default function ProfileCard() {
               }
             />
           ) : (
-            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.email}</p>
+            <p className="profile-box font-style1 font-extrabold">{profile.email}</p>
           )}
         </div>
 
         {/* Phone */}
-        <div>
-          <label className="text-xs font-semibold uppercase text-gray-500">
+       <div className="border p-2 rounded-xl border-gray-400">
+          <label className="text-xs  uppercase ">
             Phone
           </label>
           {isEditing ? (
@@ -190,7 +192,7 @@ export default function ProfileCard() {
               }
             />
           ) : (
-            <p className="profile-box border border-[#CACACB] rounded-2xl p-3">{profile.phoneNumber}</p>
+            <p className="profile-box font-style1 font-extrabold">{profile.phoneNumber}</p>
           )}
         </div>
       </div>
@@ -203,7 +205,7 @@ export default function ProfileCard() {
               setEditData(profile)
               setIsEditing(true)
             }}
-            className="w-full h-12 bg-[#0A7676] text-white rounded-lg font-semibold"
+            className="w-full h-12 bg-[#0A7676] text-white rounded-2xl font-semibold"
           >
             Edit
           </button>
@@ -211,7 +213,7 @@ export default function ProfileCard() {
           <>
             <button
               onClick={handleSave}
-              className="flex-1 h-12 bg-[#0A7676] text-white rounded-lg font-semibold"
+              className="flex-1 h-12 bg-[#0A7676] text-white rounded-2xl  font-semibold"
             >
               Save Changes
             </button>
