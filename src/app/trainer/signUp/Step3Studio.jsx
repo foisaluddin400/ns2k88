@@ -1,7 +1,7 @@
 const Step3Studio = ({ onNext }) => (
   <div className="space-y-4">
 <div className="text-center">
-        <h2 className="text-[20px] font-bold italic">Set up your training location</h2>
+        <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Set up your training location</h2>
         <p className="text-[14px] text-[#7E8792]">
         Please provide the address of the studio where you conduct training sessions. Remember that training sessions cannot be held at home.
         </p>

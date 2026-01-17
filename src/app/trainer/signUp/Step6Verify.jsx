@@ -13,7 +13,7 @@ const Step6Verify = ({ onVerify }) => {
       <div>
         <div className="w-full text-center">
           {/* Header */}
-          <h1 className="font-bold text-gray-900">Activate your payment</h1>
+          <h1 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Activate your payment</h1>
           <p className="mt-1 text-sm font-medium text-gray-600">(2 minutes)</p>
 
           {/* Description */}

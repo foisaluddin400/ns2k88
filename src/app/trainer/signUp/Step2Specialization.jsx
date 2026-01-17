@@ -12,7 +12,7 @@ const Step2Specialization = ({ onNext }) => {
   return (
     <div className="space-y-4">
       <div className="text-center">
-        <h2 className="text-[20px] font-bold italic">Personal Information</h2>
+        <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Expertise & Specialization</h2>
         <p className="text-[14px] text-[#7E8792]">
           Choose your focus areas. You can <br />
           select more than one.

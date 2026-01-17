@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 10.10.20.60 -p 4173",
-    "build": "next build",
-    "start": "next start -H 10.10.20.60 -p 4173",
+    "dev": "node api.js && next dev -H 10.10.20.60 -p 4173",
+    "build": "node api.js && next build",
+    "start": "node api.js && next start -H 10.10.20.60 -p 4173",
     "preview": "next start -H 10.10.20.60 -p 4173",
     "lint": "next lint"
   },
