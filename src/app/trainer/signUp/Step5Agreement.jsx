@@ -2,7 +2,7 @@ const Step5Agreement = ({ onNext }) => (
   <div className="space-y-6">
     {/* Header */}
     <div className="text-center">
-      <h2 className="text-xl font-bold italic">Service Agreement</h2>
+      <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Service Agreement</h2>
       <p className="text-sm text-gray-500 mt-1">
         Please carefully review the contract terms below to proceed with your trainer account setup.
       </p>

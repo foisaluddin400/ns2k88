@@ -43,7 +43,7 @@ const Setting = () => {
   // Sections data
   const accountSection = [
     { title: "Personal Information", route: "/personal_information" },
-    { title: "Trainer Information", route: "/favorite_trainer" },
+    { title: "Trainer Information", route: "/trainer/profile/trainerInfo" },
      { title: "Package and price", route: "/favorite_trainer" },
       { title: "My availability", route: "/favorite_trainer" },
     { title: "Connected Account", route: "/coach" },

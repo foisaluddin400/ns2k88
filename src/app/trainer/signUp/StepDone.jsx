@@ -7,7 +7,7 @@ const StepDone = () => (
       <IconSuccess
     ></IconSuccess>
     </div>
-    <h2 className="text-2xl font-bold">Your trainer profile is live!</h2>
+    <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Your trainer profile is live!</h2>
     <p>
     You're all set and ready to connect with new clients. Welcome to the team!
     </p>
