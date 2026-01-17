@@ -8,8 +8,14 @@ import Link from "next/link";
 import { Navigate } from "@/components/Navigate";
 import CertifcateIcon from "./CertifcateIcon";
 import InfoIcon from "./InfoIcon";
+import IconLocation from "./IconLocation";
+import IconExperience from "./IconExperience";
+import IconCertificate from "./IconCertificate";
 
 export default function DetailsInfo() {
+  const [showAllSkills, setShowAllSkills] = useState(false);
+  const [showFullAbout, setShowFullAbout] = useState(false);
+
   const [selectedDate, setSelectedDate] = useState(20);
   const [selectedTime, setSelectedTime] = useState("2:00 p.m.");
   const [open, setOpen] = useState(false);
@@ -46,38 +52,52 @@ export default function DetailsInfo() {
         <div className="flex items-start justify-between mb-4">
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-[20px] italic font-bold ">Ann Smith, 26</h1>
+              <h1 className="text-2xl font-style1 font-extrabold  ">
+                Ann Smith, 26
+              </h1>
               <span>
                 <MarkIcon></MarkIcon>
               </span>
             </div>
-            <div className="flex gap-2 mt-3">
-              <span className="px-3 py-1 border  text-[#7E8792] text-xs rounded-full font-medium">
-                Yoga
-              </span>
-              <span className="px-3 py-1 border  text-[#7E8792] text-xs rounded-full font-medium">
-                Stretching
-              </span>
-              <span className="px-3 py-1 border  text-[#7E8792] text-xs rounded-full font-medium">
-                Pilates
-              </span>
-              <span
-                onClick={openModal}
-                className="px-3 cursor-pointer py-1 border  text-blue-700 text-xs rounded-full font-medium"
-              >
-                +7 More
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center gap-1  ">
-            <span className="font-semibold ">4.9</span>
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+           <div className="flex gap-2 mt-3 flex-wrap">
+  {(showAllSkills
+    ? [
+        "Yoga",
+        "Stretching",
+        "Pilates",
+        "Cardio",
+        "Strength",
+        "Mobility",
+        "Balance",
+        "HIIT",
+        "Core",
+      ]
+    : ["Yoga", "Stretching", "Pilates"]
+  ).map((skill) => (
+    <span
+      key={skill}
+      className="px-3 py-1 border text-[#7E8792] text-xs rounded-full font-medium"
+    >
+      {skill}
+    </span>
+  ))}
+
+  <button
+    onClick={() => setShowAllSkills((prev) => !prev)}
+    className="px-3 py-1 border text-blue-700 text-xs rounded-full font-medium"
+  >
+    {showAllSkills ? "- Less" : "+7 More"}
+  </button>
+</div>
+
           </div>
         </div>
 
         {/* Fast Facts */}
         <div className="mt-8">
-          <h2 className="text-lg font-bold italic mb-4">Fast facts</h2>
+          <h2 className="text-base font-style1 font-extrabold mb-2">
+            Fast facts
+          </h2>
 
           <div className="space-y-3">
             {/* Location */}
@@ -92,73 +112,14 @@ export default function DetailsInfo() {
                 </div>
               </div>
               <button className="text-gray-400 hover:text-gray-600">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
+                <IconLocation></IconLocation>
               </button>
             </div>
 
             {/* Experience */}
             <div className="bg-white shadow-sm border p-4 rounded-2xl">
               <div className="flex items-center  gap-3">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.0006 16.5H12.0006C15.0156 16.5 15.5556 15.2925 15.7131 13.8225L16.2756 7.8225C16.4781 5.9925 15.9531 4.5 12.7506 4.5H5.2506C2.0481 4.5 1.5231 5.9925 1.7256 7.8225L2.2881 13.8225C2.4456 15.2925 2.9856 16.5 6.0006 16.5Z"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M6 4.5V3.9C6 2.5725 6 1.5 8.4 1.5H9.6C12 1.5 12 2.5725 12 3.9V4.5"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M10.5 9.75V10.5C10.5 10.5075 10.5 10.5075 10.5 10.515C10.5 11.3325 10.4925 12 9 12C7.515 12 7.5 11.34 7.5 10.5225V9.75C7.5 9 7.5 9 8.25 9H9.75C10.5 9 10.5 9 10.5 9.75Z"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M16.2375 8.25C14.505 9.51 12.525 10.26 10.5 10.515"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M1.96484 8.45312C3.65234 9.60812 5.55734 10.3056 7.49984 10.5231"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <IconExperience></IconExperience>
 
                 <div>
                   <p className="text-xs text-[#A3A9B0] uppercase">Experience</p>
@@ -170,28 +131,7 @@ export default function DetailsInfo() {
             {/* Certificate */}
             <div className="bg-white shadow-sm border p-4 rounded-2xl flex  justify-between">
               <div className="flex items-center  gap-3">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.28516 9.00055L8.09266 10.8155L11.7152 7.18555"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M8.06266 1.83773C8.58016 1.39523 9.42766 1.39523 9.95266 1.83773L11.1377 2.85773C11.3627 3.05273 11.7827 3.21023 12.0827 3.21023H13.3577C14.1527 3.21023 14.8052 3.86273 14.8052 4.65773V5.93273C14.8052 6.22523 14.9627 6.65273 15.1577 6.87773L16.1777 8.06273C16.6202 8.58023 16.6202 9.42773 16.1777 9.95273L15.1577 11.1377C14.9627 11.3627 14.8052 11.7827 14.8052 12.0827V13.3577C14.8052 14.1527 14.1527 14.8052 13.3577 14.8052H12.0827C11.7902 14.8052 11.3627 14.9627 11.1377 15.1577L9.95266 16.1777C9.43516 16.6202 8.58766 16.6202 8.06266 16.1777L6.87766 15.1577C6.65266 14.9627 6.23266 14.8052 5.93266 14.8052H4.63516C3.84016 14.8052 3.18766 14.1527 3.18766 13.3577V12.0752C3.18766 11.7827 3.03016 11.3627 2.84266 11.1377L1.83016 9.94523C1.39516 9.42773 1.39516 8.58773 1.83016 8.07023L2.84266 6.87773C3.03016 6.65273 3.18766 6.23273 3.18766 5.94023V4.65023C3.18766 3.85523 3.84016 3.20273 4.63516 3.20273H5.93266C6.22516 3.20273 6.65266 3.04523 6.87766 2.85023L8.06266 1.83773Z"
-                    stroke="#7E8792"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <IconCertificate></IconCertificate>
 
                 <div>
                   <p className="text-xs text-[#A3A9B0]  uppercase">
@@ -231,16 +171,26 @@ export default function DetailsInfo() {
         {/* About Me */}
         <div className="mt-8">
           <h2 className="text-[14px] font-bold italic mb-3">About me</h2>
-          <p className="bg-white shadow-sm border p-4 rounded-2xl text-sm leading-relaxed">
-            I help my clients improve strength, mobility and balance. My focus
-            is on holistic training and sustainable results.
-            <button className="  ml-1">See More</button>
-          </p>
+
+          <div className="bg-white shadow-sm border p-4 rounded-2xl text-sm leading-relaxed">
+            <p>
+              {showFullAbout
+                ? "I help my clients improve strength, mobility and balance. My focus is on holistic training and sustainable results. I design personalized programs based on individual goals, ensuring long-term progress, injury prevention, and mental well-being."
+                : "I help my clients improve strength, mobility and balance..."}
+
+              <button
+                onClick={() => setShowFullAbout((prev) => !prev)}
+                className="ml-1 text-blue-600 font-medium"
+              >
+                {showFullAbout ? "See Less" : "See More"}
+              </button>
+            </p>
+          </div>
         </div>
 
         {/* Availability Preview */}
         <div className="mt-8">
-          <h2 className="text-[14px] font-bold italic mb-4">
+          <h2 className="text-base font-style1 font-extrabold mb-2">
             Availability preview
           </h2>
 
@@ -309,7 +259,7 @@ export default function DetailsInfo() {
         {/* Book Now Button */}
         <Link href={"/book"}>
           <button className="w-full mt-8 mb-8 bg-primary text-white font-bold py-3 rounded-2xl italic transition-colors">
-          Preise und Pakete
+            Preise und Pakete
           </button>
         </Link>
       </div>

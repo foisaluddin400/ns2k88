@@ -26,7 +26,7 @@ const Step4Certification = ({ onNext }) => {
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-xl font-bold italic">Certification & Organic</h2>
+        <h2 className="text-2xl font-style1 font-extrabold py-2 text-center text-gray-800">Certification & Organic</h2>
         <p className="text-sm text-gray-500">
           Present your qualifications and connect you with clients.
         </p>
